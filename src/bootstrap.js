@@ -2,12 +2,12 @@ require.config({
 	baseUrl: "js",
 
 	paths: {
-		jquery: 'lib/jquery/jquery',
-		underscore: 'lib/underscore/underscore',
-		backbone: 'lib/backbone/backbone',
-		handlebars: "lib/handlebars/handlebars",
-		text: "lib/require/text",
-		less: "lib/less/less"
+		jquery: 'vendor/jquery/jquery',
+		underscore: 'vendor/underscore/underscore',
+		backbone: 'vendor/backbone/backbone',
+		handlebars: "vendor/handlebars/handlebars",
+		text: "vendor/require/text",
+		less: "vendor/less/less"
 	},
 	shim: {
 		backbone: {
@@ -24,8 +24,8 @@ require.config({
 });
 
 require([
-	"view/App", 
+	"App",
 	"less"
-], function (App, less) {
+], function (App) {
 	var app = new App();
 });
