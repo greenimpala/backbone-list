@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="vendor/mocha/mocha.css" />
+	</head>
+	<body>
+		<div id="mocha"></div>
+		<script src="vendor/mocha/mocha.js"></script>
+		<script src="vendor/chai/chai.js"></script>
+		<script>
+			mocha.setup("bdd");
+			assert = chai.assert;
+		</script>
+		<script type="text/javascript">
+		describe('My Test', function () {
+			it("should do something", function () {
+				assert.typeOf("ssss", 'string', 'foo is a string');
+				assert.equal("bar", 'bar', 'foo equal `bar`');
+			});
+
+			it("should do something else", function () {
+				assert.typeOf("ssss", 'string', 'foo is a string');
+				assert.equal("bar", 'bar', 'foo equal `bar`');
+			});
+
+			it("should do something finally", function () {
+				assert.typeOf("ssss", 'string', 'foo is a string');
+				assert.equal("bar", 'bar', 'foo equal `bar`');
+			});
+		});
+		</script>
+		<script>
+			if (!window.mochaPhantomJS) { mocha.run(); }
+		</script>
+	</body>
+</html>
