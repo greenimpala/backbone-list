@@ -2,35 +2,30 @@
 	<head>
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="vendor/mocha/mocha.css" />
+		<script src="vendor/mocha/mocha.js"></script>
+		<script src="vendor/chai/chai.js"></script>
+		<script data-main="../src/js/bootstrap" src="../src/js/vendor/require/require.js"></script>
 	</head>
 	<body>
 		<div id="mocha"></div>
-		<script src="vendor/mocha/mocha.js"></script>
-		<script src="vendor/chai/chai.js"></script>
-		<script>
+		<script type="text/javascript">
 			mocha.setup("bdd");
 			assert = chai.assert;
-		</script>
-		<script type="text/javascript">
-		describe('My Test', function () {
-			it("should do something", function () {
-				assert.typeOf("ssss", 'string', 'foo is a string');
-				assert.equal("bar", 'bar', 'foo equal `bar`');
-			});
 
-			it("should do something else", function () {
-				assert.typeOf("ssss", 'string', 'foo is a string');
-				assert.equal("bar", 'bar', 'foo equal `bar`');
-			});
+			var testModules = [
+				"specs/view/tree/File",
+				"specs/view/tree/Folder"
+			];
 
-			it("should do something finally", function () {
-				assert.typeOf("ssss", 'string', 'foo is a string');
-				assert.equal("bar", 'bar', 'foo equal `bar`');
+			for (var i = 0; i < testModules.length; i++) { testModules[i] = "../../test/" + testModules[i]; }
+
+			require(testModules, function () {
+				if (window.mochaPhantomJS) {
+					mochaPhantomJS.run()
+				} else {
+					mocha.run();
+				}
 			});
-		});
-		</script>
-		<script>
-			if (!window.mochaPhantomJS) { mocha.run(); }
 		</script>
 	</body>
 </html>

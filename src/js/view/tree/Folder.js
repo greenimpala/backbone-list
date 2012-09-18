@@ -5,24 +5,22 @@ define([
 	"view/tree/TreeItem"
 ], function (Backbone, _, $, TreeItem) {
 	var Folder = TreeItem.extend({
-		_children: null,
+		children: null,
 
 		initialize: function () {
-			this.children = new Backbone.Collection({
-				model: TreeItem
-			});
+			this.children = new Backbone.Collection();
 		},
 
 		add: function (child) {
-			this._children.add(child);
+			this.children.add(child);
 		},
 
 		remove: function () {
-			this._children.remove(child);
+			this.children.remove(child);
 		},
 
 		getChild: function (i) {
-			return this._children.at(i);
+			return this.children.at(i);
 		},
 
 		show: function () {
