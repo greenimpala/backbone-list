@@ -13,11 +13,10 @@
 			assert = chai.assert;
 
 			var testModules = [
-				"specs/view/tree/File",
-				"specs/view/tree/Folder"
+				"components/tree/view/TreeView"
 			];
 
-			for (var i = 0; i < testModules.length; i++) { testModules[i] = "../../test/" + testModules[i]; }
+			for (var i = 0; i < testModules.length; i++) { testModules[i] = "../../test/specs/" + testModules[i]; }
 
 			require(testModules, function () {
 				if (window.mochaPhantomJS) {

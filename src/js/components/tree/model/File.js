@@ -2,15 +2,11 @@ define([
 	"backbone",
 	"underscore",
 	"jquery",
-	"view/tree/TreeItem"
+	"components/tree/model/TreeItem"
 ], function (Backbone, _, $, TreeItem) {
 	var File = TreeItem.extend({
-		show: function () {
-			this.$el.show();
-		},
+		initialize: function () {
 
-		hide: function () {
-			this.$el.hide();
 		}
 	});
 
