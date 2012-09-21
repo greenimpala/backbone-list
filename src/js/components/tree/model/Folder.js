@@ -10,11 +10,11 @@ define([
 		},
 
 		add: function (child) {
-			this.children.add(child);
+			this.get("children").add(child);
 		},
 
 		remove: function () {
-			this.children.remove(child);
+			this.get("children").remove(child);
 		}
 	});
 

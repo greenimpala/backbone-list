@@ -16,16 +16,14 @@ define([
 			this.model.get("children").on("add", this.onChildAdded, this);
 		},
 
-		show: function () {
-			this.$el.show();
-		},
-
-		hide: function () {
-			this.$el.hide();
-		},
-
 		render: function () {
+			this.$el.empty();
 
+			_.each(this.childViews, function (child) {
+				this.$el.append(child.render.el);
+			});
+
+			this.$el.wrap("ul").prepend(this.model.get("name"));
 		},
 
 		onChildAdded: function (child) {

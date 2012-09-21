@@ -5,7 +5,11 @@ define([
 	"components/tree/view/FolderView"
 ], function (Backbone, _, $, FolderView) {
 	var TreeView = FolderView.extend({
-		className: "tree"
+		className: "tree",
+
+		initialize: function () {
+			FolderView.prototype.initialize.call(this);
+		}
 	});
 
 	return TreeView;
