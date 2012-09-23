@@ -1,6 +1,6 @@
-/*! Backbone AMD Bootstrap - v0.1 - 9/23/2012
-* homepage
-* Copyright (c) 2012  Licensed */
+/* BackboneAMDBootstrap - v0.0.1 - 9/23/2012
+* https://github.com/st3redstripe/BackboneAMDBootstrap.git
+* Copyright (c) 2012 Stephen Bradshaw License BSD */
 
 define([
 	"backbone",

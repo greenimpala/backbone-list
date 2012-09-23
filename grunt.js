@@ -1,16 +1,15 @@
 module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
+		pkg: '<json:package.json>',
 		lint: {
 		  all: ['grunt.js', 'src/**/*.js', 'test/**/*.js']
 		},
 		meta: {
-			name: 'Backbone AMD Bootstrap',
-			author: "Stephen Bradshaw",
-			banner: '/*! <%= meta.name %> - v<%= "0.1" %> - <%= grunt.template.today("m/d/yyyy") %>\n' +
-					'* <%= "homepage" %>\n' +
-					'* Copyright (c) <%= grunt.template.today("yyyy") %> <% meta.author %>' +
-					' Licensed */'
+			banner: '/* <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("m/d/yyyy") %>\n' +
+					'* <%= pkg.repository.url %>\n' +
+					'* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>' +
+					' License <%= pkg.license %> */'
 		},
 		jshint: {
 			options: {
@@ -35,6 +34,6 @@ module.exports = function(grunt) {
 	});
 	grunt.loadNpmTasks('grunt-mocha');
 
-	// Default task.
+	// Default task
 	grunt.registerTask('default', 'mocha concat min');
 };
