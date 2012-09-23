@@ -1,1 +1,0 @@
-phantomjs vendor/mocha-phantomjs/mocha-phantomjs.coffee http://dev/BackboneAMDBootstrap/test/index.html

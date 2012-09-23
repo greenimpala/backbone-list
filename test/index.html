@@ -20,11 +20,7 @@
 			for (var i = 0; i < testModules.length; i++) { testModules[i] = "../../test/specs/" + testModules[i]; }
 
 			require(testModules, function () {
-				if (window.mochaPhantomJS) {
-					mochaPhantomJS.run()
-				} else {
-					mocha.run();
-				}
+				mocha.run();
 			});
 		</script>
 	</body>
