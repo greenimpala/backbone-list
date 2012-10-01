@@ -13,7 +13,7 @@ define([
 			this.get("children").add(child);
 		},
 
-		remove: function () {
+		remove: function (child) {
 			this.get("children").remove(child);
 		}
 	});

@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: '<json:package.json>',
 		lint: {
-		  all: ['grunt.js', 'src/**/*.js', 'test/**/*.js']
+			all: ['grunt.js', 'src/js/**/*.js', 'test/specs/**/*.js']
 		},
 		meta: {
 			banner: '/* <%= pkg.name %> - v<%= pkg.version %> - <%= grunt.template.today("m/d/yyyy") %>\n' +
@@ -16,10 +16,14 @@ module.exports = function(grunt) {
 				browser: true
 			}
 		},
-		concat: {
-			dist: {
-				src: ['<banner>', 'src/**/*.js'],
-				dest: 'dist/BackboneAMDBootstrap.js'
+		requirejs: {
+			compile: {
+				options: {
+					baseUrl: "src/js",
+					mainConfigFile: "src/js/bootstrap.js",
+					dir: "dist",
+					name: 'App'
+				}
 			}
 		},
 		min: {
@@ -33,7 +37,7 @@ module.exports = function(grunt) {
 		}
 	});
 	grunt.loadNpmTasks('grunt-mocha');
-
+	grunt.loadNpmTasks('grunt-contrib-requirejs');
 	// Default task
-	grunt.registerTask('default', 'mocha concat min');
+	grunt.registerTask('default', 'mocha lint requirejs');
 };

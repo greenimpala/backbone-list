@@ -13,25 +13,35 @@ define([
 
 		initialize: function () {
 			this.childViews = {};
-			this.model.get("children").on("add", this.onChildAdded, this);
+			this.model.get("children").on("add", this.onChildModelAdded, this);
+			this.model.get("children").on("remove", this.onChildModelRemoved, this);
 		},
 
 		render: function () {
 			this.$el.empty();
 
 			_.each(this.childViews, function (child) {
-				this.$el.append(child.render.el);
-			});
+				this.$el.append(child.render().el);
+			}, this);
 
 			this.$el.wrap("ul").prepend(this.model.get("name"));
+
+			return this;
 		},
 
-		onChildAdded: function (child) {
+		onChildModelAdded: function (child) {
 			if (child instanceof File) {
 				this.childViews[child.cid] = new FileView({ model: child });
 			} else if (child instanceof Folder) {
 				this.childViews[child.cid] = new FolderView({ model: child });
 			}
+		},
+
+		onChildModelRemoved: function (child) {
+			var view = this.childViews[child.cid];
+
+			view.remove();
+			delete this.childViews[child.cid];
 		}
 	});
 

@@ -2,7 +2,6 @@
 	"name": "BackboneAMDBootstrap",
 	"version": "0.0.1",
 	"description": "A Backbone.js AMD Bootstrap with Require.js, jQuery, LESS & Handlebars templates.",
-	"main": "grunt.js",
 	"directories": {
 		"test": "test"
 	},

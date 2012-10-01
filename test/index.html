@@ -3,8 +3,10 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" href="vendor/mocha/mocha.css" />
 		<script src="vendor/mocha/mocha.js"></script>
+		<script src="vendor/sinon/sinon.js"></script>
 		<script src="vendor/chai/chai.js"></script>
-		<script data-main="../src/js/bootstrap" src="../src/js/vendor/require/require.js"></script>
+		<script src="vendor/sinon-chai/sinon-chai.js"></script>
+		<script data-main="../src/js/bootstrap" src="../src/vendor/require/require.js"></script>
 	</head>
 	<body>
 		<div id="mocha"></div>
@@ -14,10 +16,14 @@
 
 			var testModules = [
 				"components/tree/view/TreeView",
-				"components/tree/view/FolderView"
+				"components/tree/view/FolderView",
+				"components/tree/model/Tree",
+				"components/tree/model/Folder"
 			];
 
-			for (var i = 0; i < testModules.length; i++) { testModules[i] = "../../test/specs/" + testModules[i]; }
+			for (var i = 0; i < testModules.length; i++) {
+				testModules[i] = "../../test/specs/" + testModules[i];
+			}
 
 			require(testModules, function () {
 				mocha.run();
