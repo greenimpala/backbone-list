@@ -9,6 +9,8 @@ define([
 	var FolderView = Backbone.View.extend({
 		className: "folder",
 
+		tagName: "ul",
+
 		childViews: null,
 
 		initialize: function () {
@@ -20,28 +22,45 @@ define([
 		render: function () {
 			this.$el.empty();
 
-			_.each(this.childViews, function (child) {
+            _.each(this.childViews, function (child) {
 				this.$el.append(child.render().el);
 			}, this);
 
-			this.$el.wrap("ul").prepend(this.model.get("name"));
+			this.$el.prepend(this.model.get("title"));
 
 			return this;
 		},
 
-		onChildModelAdded: function (child) {
-			if (child instanceof File) {
-				this.childViews[child.cid] = new FileView({ model: child });
-			} else if (child instanceof Folder) {
-				this.childViews[child.cid] = new FolderView({ model: child });
+		onChildModelAdded: function (model) {
+			this._createChildView(model);
+
+			if (model instanceof Folder) {
+				model.get("children").each(function (child) {
+					model.get("children").trigger("add", child);
+				});
 			}
 		},
 
-		onChildModelRemoved: function (child) {
-			var view = this.childViews[child.cid];
+		onChildModelRemoved: function (model) {
+			this._deleteChildView(model);
+		},
 
-			view.remove();
-			delete this.childViews[child.cid];
+		_createChildView: function (model) {
+			var view;
+
+			if (model instanceof File) {
+				view = new FileView({ model: model });
+			} else if (model instanceof Folder) {
+				view = new FolderView({ model: model });
+			}
+			this.childViews[model.cid] = view;
+
+			return view;
+		},
+
+		_deleteChildView: function (model) {
+			this.childViews[model.cid].remove();
+			delete this.childViews[model.cid];
 		}
 	});
 
