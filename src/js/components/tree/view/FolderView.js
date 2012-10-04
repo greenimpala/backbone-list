@@ -2,14 +2,18 @@ define([
 	"backbone",
 	"underscore",
 	"jquery",
+	"handlebars",
 	"components/tree/model/File",
 	"components/tree/model/Folder",
-	"components/tree/view/FileView"
-], function (Backbone, _, $, File, Folder, FileView) {
+	"components/tree/view/FileView",
+	"text!components/tree/templates/FolderView.html"
+], function (Backbone, _, $, Handlebars, File, Folder, FileView, template) {
 	var FolderView = Backbone.View.extend({
 		className: "folder",
 
-		tagName: "ul",
+		tagName: "li",
+
+		template: Handlebars.compile(template),
 
 		childViews: null,
 
@@ -17,23 +21,31 @@ define([
 			this.childViews = {};
 			this.model.get("children").on("add", this.onChildModelAdded, this);
 			this.model.get("children").on("remove", this.onChildModelRemoved, this);
+			this.model.on("change:visible", this.onVisibilityChange, this);
 		},
 
 		render: function () {
-			this.$el.empty();
-
-            _.each(this.childViews, function (child) {
-				this.$el.append(child.render().el);
-			}, this);
-
-			this.$el.prepend(this.model.get("title"));
+			this.$el.html(this.template(this.model.attributes));
+			this.$el.append(this._renderChildren());
 
 			return this;
+		},
+
+		_renderChildren: function () {
+			var ul = $(this.make("ul"));
+			ul.toggle(this.model.get("visible"));
+
+			_.each(this.childViews, function (child) {
+				ul.append(child.render().el);
+			}, this);
+
+			return ul;
 		},
 
 		onChildModelAdded: function (model) {
 			this._createChildView(model);
 
+			// Manually trigger the 'add' event for any child models
 			if (model instanceof Folder) {
 				model.get("children").each(function (child) {
 					model.get("children").trigger("add", child);
@@ -43,6 +55,12 @@ define([
 
 		onChildModelRemoved: function (model) {
 			this._deleteChildView(model);
+		},
+
+		onVisibilityChange: function (model) {
+			var visible = model.get("visible");
+
+			this.render();
 		},
 
 		_createChildView: function (model) {

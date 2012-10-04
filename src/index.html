@@ -12,28 +12,35 @@
 			"components/tree/model/Tree",
             "components/tree/model/File",
             "components/tree/model/Folder",
-            "components/tree/view/FolderView"
+            "components/tree/view/TreeView"
 		], function (Tree, File, Folder, TreeView) {
             var treeModel = new Tree();
-            var view = new TreeView({ model: treeModel });
+            var treeView = new TreeView({ model: treeModel });
 
             treeModel.add(new File({ title: "some file" }));
             treeModel.add(new File({ title: "some file" }));
 
-            var folder = new Folder({ title: "some nested folder" });
+            var folder = new Folder({ title: "some folder" });
             folder.add(new File({ title: "some nested file" }));
             folder.add(new File({ title: "some nested file" }));
-
             treeModel.add(folder);
+
             treeModel.add(new File({ title: "some file" }));
 
-            var nestedFolder = new Folder({ title: "some super nested folder" });
+            var nestedFolder = new Folder({ title: "some nested folder" });
+            window.nestedFolder = nestedFolder;
             nestedFolder.add(new File({ title: "some super nested file" }));
             nestedFolder.add(new File({ title: "some super nested file" }));
             folder.add(nestedFolder);
+
             folder.add(new File({ title: "some nested file" }));
 
-            $("#container").html(view.render().el);
+            var superNestedFolder = new Folder({ title: "some other folder" });
+            superNestedFolder.add(new File({ title: "some other nested file" }));
+            superNestedFolder.add(new Folder({ title: "some other nested folder" }));
+            treeModel.add(superNestedFolder);
+
+            $("#container").html(treeView.render().el);
 		});
 	</script>
 </body>

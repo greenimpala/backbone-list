@@ -3,9 +3,8 @@ define([
 	"components/tree/view/FileView",
 	"components/tree/view/FolderView",
 	"components/tree/model/Tree",
-	"components/tree/model/File",
-	"components/tree/model/Folder"
-], function (_, FileView, FolderView, Tree, File, Folder) {
+	"components/tree/model/File"
+], function (_, FileView, FolderView, Tree, File) {
 	describe("components/tree/view/FileView", function () {
 
 		it("instantiates with a model", function () {

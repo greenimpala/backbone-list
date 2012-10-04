@@ -6,7 +6,11 @@ define([
 ], function (Backbone, _, $, TreeItem) {
 	var Folder = TreeItem.extend({
 		initialize: function () {
-			this.set("children", new Backbone.Collection());
+			TreeItem.prototype.initialize.call(this);
+			this.set({
+				children: new Backbone.Collection(),
+				icon: "icon-folder"
+			});
 		},
 
 		add: function (child) {

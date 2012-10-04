@@ -4,33 +4,39 @@ define([
 	describe("components/tree/model/Folder", function () {
 
 		it("should instantiate", function () {
-			var folderModel = new Folder();
+			var model = new Folder();
 
-			chai.assert(folderModel);
+			chai.assert.isDefined(model);
 		});
 
 		it("should create a children collection on initializing", function () {
-			var folderModel = new Folder();
+			var model = new Folder();
 
-			chai.assert.instanceOf(folderModel.get("children"), Backbone.Collection);
+			chai.assert.instanceOf(model.get("children"), Backbone.Collection);
 		});
 
 		it("can add a child", function () {
-			var folderModel = new Folder();
+			var model = new Folder();
 
-			folderModel.add(new Folder());
+			model.add(new Folder());
 
-			chai.assert.lengthOf(folderModel.get("children"), 1);
+			chai.assert.lengthOf(model.get("children"), 1);
 		});
 
 		it("can remove a child", function () {
-			var folderModel = new Folder(),
+			var model = new Folder(),
 				child = new Folder();
 
-			folderModel.add(child);
-			folderModel.remove(child);
+			model.add(child);
+			model.remove(child);
 
-			chai.assert.lengthOf(folderModel.get("children"), 0);
+			chai.assert.lengthOf(model.get("children"), 0);
+		});
+
+		it("sets a default icon property", function () {
+			var model = new Folder();
+
+			chai.assert.isString(model.get("icon"));
 		});
 	});
 });

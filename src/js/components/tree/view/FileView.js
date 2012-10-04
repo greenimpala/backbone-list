@@ -1,23 +1,21 @@
 define([
 	"backbone",
 	"underscore",
-	"jquery"
-], function (Backbone, _, $) {
+	"jquery",
+	"handlebars",
+	"text!components/tree/templates/FileView.html"
+], function (Backbone, _, $, Handlebars, template) {
 	var FileView = Backbone.View.extend({
 		className: "file",
 
         tagName: "li",
 
-		show: function () {
-			this.$el.show();
-		},
-
-		hide: function () {
-			this.$el.hide();
-		},
+		template: Handlebars.compile(template),
 
 		render: function () {
-            this.$el.html(this.model.get("title"));
+			var renderedTemplate = this.template(this.model.attributes);
+
+            this.$el.html(renderedTemplate);
 
 			return this;
 		}

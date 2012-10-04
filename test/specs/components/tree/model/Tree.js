@@ -7,7 +7,7 @@ define([
 		it("should instantiate", function () {
 			var treeModel = new Tree();
 
-			chai.assert(treeModel);
+			chai.assert.isDefined(treeModel);
 		});
 	});
 });

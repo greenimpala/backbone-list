@@ -8,7 +8,7 @@ define([
 		it("should instantiate with a model", function () {
 			var treeModel = new Tree();
 			
-			chai.assert(new TreeView({ model: treeModel }));
+			chai.assert.isDefined(new TreeView({ model: treeModel }));
 		});
 	});
 });

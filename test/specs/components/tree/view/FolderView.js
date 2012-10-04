@@ -1,11 +1,19 @@
 define([
 	"underscore",
+	"handlebars",
 	"components/tree/view/FolderView",
 	"components/tree/view/FileView",
 	"components/tree/model/Tree",
 	"components/tree/model/File",
-	"components/tree/model/Folder"
-], function (_, FolderView, FileView, Tree, File, Folder) {
+	"components/tree/model/Folder",
+	"text!components/tree/templates/_TreeIcon.html"
+], function (_, Handlebars, FolderView, FileView, Tree, File, Folder, treeArrowIconTemplate) {
+
+	(function () {
+		/* Setup */
+		Handlebars.registerPartial("treeArrowIcon", treeArrowIconTemplate);
+	}());
+
 	describe("components/tree/view/FolderView", function () {
 
 		it("instantiates with a model", function () {
@@ -72,6 +80,23 @@ define([
 			_.each(spies, function (spy) {
 				chai.assert.isTrue(spy.calledOnce);
 			});
+		});
+
+		it("triggers an add event for each child when a model with children is added", function () {
+			var folder = new Folder(),
+				nestedFolder = new Folder(),
+				view = new FolderView({ model: folder }),
+				childModels = nestedFolder.get("children"),
+				spy;
+
+			nestedFolder.add(new File());
+			nestedFolder.add(new File());
+			nestedFolder.add(new File());
+			spy = sinon.spy(childModels, "trigger");
+
+			folder.add(nestedFolder);
+
+			chai.assert.isTrue(spy.calledThrice);
 		});
 	});
 });

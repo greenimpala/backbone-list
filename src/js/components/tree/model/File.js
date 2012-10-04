@@ -6,7 +6,8 @@ define([
 ], function (Backbone, _, $, TreeItem) {
 	var File = TreeItem.extend({
 		initialize: function () {
-
+			TreeItem.prototype.initialize.call(this);
+			this.set("icon", "icon-file");
 		}
 	});
 
