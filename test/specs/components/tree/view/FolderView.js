@@ -5,14 +5,8 @@ define([
 	"components/tree/view/FileView",
 	"components/tree/model/Tree",
 	"components/tree/model/File",
-	"components/tree/model/Folder",
-	"text!components/tree/templates/_TreeIcon.html"
-], function (_, Handlebars, FolderView, FileView, Tree, File, Folder, treeArrowIconTemplate) {
-
-	(function () {
-		/* Setup */
-		Handlebars.registerPartial("treeArrowIcon", treeArrowIconTemplate);
-	}());
+	"components/tree/model/Folder"
+], function (_, Handlebars, FolderView, FileView, Tree, File, Folder) {
 
 	describe("components/tree/view/FolderView", function () {
 

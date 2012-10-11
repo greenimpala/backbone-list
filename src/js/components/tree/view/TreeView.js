@@ -3,9 +3,8 @@ define([
 	"underscore",
 	"jquery",
 	"handlebars",
-	"components/tree/view/FolderView",
-	"text!components/tree/templates/_TreeIcon.html"
-], function (Backbone, _, $, Handlebars, FolderView, treeArrowIconTemplate) {
+	"components/tree/view/FolderView"
+], function (Backbone, _, $, Handlebars, FolderView) {
 	var TreeView = FolderView.extend({
 		tagName: "div",
 
@@ -13,17 +12,12 @@ define([
 
 		initialize: function () {
 			FolderView.prototype.initialize.call(this);
-			this.registerPartials();
 		},
 
 		render: function () {
-			this.$el.html(this._renderChildren());
+			FolderView.prototype.render.call(this);
 
 			return this;
-		},
-
-		registerPartials: function () {
-			Handlebars.registerPartial("treeArrowIcon", treeArrowIconTemplate);
 		}
 	});
 

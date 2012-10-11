@@ -1,13 +1,7 @@
-<span class="show-hide">
-    <button>
-        {{#if visible}}
-            Hide
-        {{else}}
-            Show
-        {{/if}}
-    </button>
+<span class="arrow">
+    <span class="arrow-icon {{#if visible}}open{{else}}closed{{/if}}"></span>
 </span>
-{{> treeArrowIcon}}
+<span class="icon {{icon}} {{#if visible}}open{{else}}closed{{/if}}"></span>
 <span>
     <strong>{{title}}</strong>
 </span>

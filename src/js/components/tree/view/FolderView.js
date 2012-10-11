@@ -22,7 +22,7 @@ define([
 		_domNodeChildren: null,
 
 		events: {
-			"click .show-hide" : "showHideChildren"
+			"click .arrow" : "showHideChildren"
 		},
 
 		initialize: function () {
@@ -35,9 +35,9 @@ define([
 			this._domNodeChildren = $(this.make("div")).appendTo(this.el);
 		},
 
-		render: function (collapse) {
+		render: function () {
 			this._renderHeader();
-			this._renderChildren(collapse);
+			this._renderChildren();
 
 			return this;
 		},
@@ -57,10 +57,8 @@ define([
 			this._deleteChildView(model);
 		},
 
-		onVisibilityChange: function (model) {
-			var visible = model.get("visible");
-
-			this.render(true);
+		onVisibilityChange: function () {
+			this.render();
 		},
 
 		showHideChildren: function (e) {
@@ -93,15 +91,10 @@ define([
 			this._domNodeHeader.html(result);
 		},
 
-		_renderChildren: function (collapse) {
+		_renderChildren: function () {
 			var ul = $(this.make("ul")).toggleClass("hidden", !this.model.get("visible"));
 
 			_.each(this.childViews, function (child) {
-				// Render folder as collapsed if necessary
-				if (collapse === true && child instanceof FolderView) {
-					child.model.set("visible", false);
-				}
-
 				ul.append(child.render().el);
 			}, this);
 

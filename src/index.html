@@ -17,8 +17,11 @@
             "components/tree/model/Folder",
             "components/tree/view/TreeView"
 		], function (Tree, File, Folder, TreeView) {
-            var treeModel = new Tree();
-            var treeView = new TreeView({ model: treeModel });
+            var model = new Tree();
+            var treeView = new TreeView({ model: model });
+
+            var treeModel = new Folder();
+            model.add(treeModel);
 
             treeModel.add(new File({ title: "some file" }));
             treeModel.add(new File({ title: "some file" }));
