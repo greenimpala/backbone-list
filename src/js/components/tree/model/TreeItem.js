@@ -4,8 +4,12 @@ define([
 	"jquery"
 ], function (Backbone, _, $) {
 	var TreeItem = Backbone.Model.extend({
+		defaults: {
+			"visible" : true
+		},
+
 		initialize: function () {
-			this.set("visible", true);
+
 		}
 	});
 

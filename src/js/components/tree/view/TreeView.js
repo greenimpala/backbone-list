@@ -9,6 +9,8 @@ define([
 	var TreeView = FolderView.extend({
 		tagName: "div",
 
+		className: "tree",
+
 		initialize: function () {
 			FolderView.prototype.initialize.call(this);
 			this.registerPartials();

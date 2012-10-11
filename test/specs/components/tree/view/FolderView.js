@@ -98,5 +98,18 @@ define([
 
 			chai.assert.isTrue(spy.calledThrice);
 		});
+
+		it("creates a UL with n children LI elements", function () {
+			var folder = new Folder(),
+				view = new FolderView({ model: folder });
+
+			folder.add(new File());
+			folder.add(new Folder());
+			folder.add(new File());
+
+			view.render();
+
+			chai.assert.equal(view.$el.find("ul:first li").length, 3);
+		});
 	});
 });
