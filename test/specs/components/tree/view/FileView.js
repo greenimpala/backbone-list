@@ -1,4 +1,4 @@
-define([
+require([
 	"underscore",
 	"components/tree/view/FileView",
 	"components/tree/view/FolderView",
