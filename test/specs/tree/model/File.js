@@ -1,7 +1,7 @@
 define([
-	"components/tree/model/File"
+	"tree/model/File"
 ], function (File) {
-	describe("components/tree/model/File", function () {
+	describe("tree/model/File", function () {
 
 		it("should instantiate", function () {
 			var model = new File();

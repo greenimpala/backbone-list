@@ -1,8 +1,8 @@
 define([
-	"components/tree/model/TreeItem",
-	"components/tree/model/File"
+	"tree/model/TreeItem",
+	"tree/model/File"
 ], function (TreeItem) {
-	describe("components/tree/model/TreeItem", function () {
+	describe("tree/model/TreeItem", function () {
 
 		it("should instantiate", function () {
 			var model = new TreeItem();

@@ -1,14 +1,14 @@
 define([
 	"underscore",
 	"handlebars",
-	"components/tree/view/FolderView",
-	"components/tree/view/FileView",
-	"components/tree/model/Tree",
-	"components/tree/model/File",
-	"components/tree/model/Folder"
+	"tree/view/FolderView",
+	"tree/view/FileView",
+	"tree/model/Tree",
+	"tree/model/File",
+	"tree/model/Folder"
 ], function (_, Handlebars, FolderView, FileView, Tree, File, Folder) {
 
-	describe("components/tree/view/FolderView", function () {
+	describe("tree/view/FolderView", function () {
 
 		it("instantiates with a model", function () {
 			var folderModel = new Folder();

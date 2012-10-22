@@ -3,7 +3,7 @@ define([
 	"underscore",
 	"jquery",
 	"handlebars",
-	"components/tree/view/FolderView"
+	"tree/view/FolderView"
 ], function (Backbone, _, $, Handlebars, FolderView) {
 	var TreeView = FolderView.extend({
 		tagName: "div",

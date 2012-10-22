@@ -3,7 +3,7 @@ define([
 	"underscore",
 	"jquery",
 	"handlebars",
-	"text!components/tree/templates/FileView.html"
+	"text!tree/templates/FileView.html"
 ], function (Backbone, _, $, Handlebars, template) {
 	var FileView = Backbone.View.extend({
 		className: "file",

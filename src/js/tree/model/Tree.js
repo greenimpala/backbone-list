@@ -2,7 +2,7 @@ define([
 	"backbone",
 	"underscore",
 	"jquery",
-	"components/tree/model/Folder"
+	"tree/model/Folder"
 ], function (Backbone, _, $, Folder) {
 	var Tree = Folder.extend({
 		initialize: function () {

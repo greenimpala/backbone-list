@@ -1,7 +1,7 @@
 define([
-	"components/tree/model/Folder"
+	"tree/model/Folder"
 ], function (Folder) {
-	describe("components/tree/model/Folder", function () {
+	describe("tree/model/Folder", function () {
 
 		it("should instantiate", function () {
 			var model = new Folder();

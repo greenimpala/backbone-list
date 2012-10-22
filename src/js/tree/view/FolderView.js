@@ -3,10 +3,10 @@ define([
 	"underscore",
 	"jquery",
 	"handlebars",
-	"components/tree/model/File",
-	"components/tree/model/Folder",
-	"components/tree/view/FileView",
-	"text!components/tree/templates/FolderView.html"
+	"tree/model/File",
+	"tree/model/Folder",
+	"tree/view/FileView",
+	"text!tree/templates/FolderView.html"
 ], function (Backbone, _, $, Handlebars, File, Folder, FileView, template) {
 	var FolderView = Backbone.View.extend({
 		className: "folder",

@@ -2,7 +2,7 @@ define([
 	"backbone",
 	"underscore",
 	"jquery",
-	"components/tree/model/TreeItem"
+	"tree/model/TreeItem"
 ], function (Backbone, _, $, TreeItem) {
 	var File = TreeItem.extend({
 		defaults: {
