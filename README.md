@@ -3,7 +3,7 @@ Backbone-Tree
 
 A simple composite tree structure implementation in Backbone.js.
 
-* Extendable structure
-* Utilises require.js modules
-* Namespaced CSS / LESS
-* Thorough test suite
+* Lightweight and extendable
+* Uses RequireJS modules
+* Namespaced LESS / CSS
+* Full test suite
