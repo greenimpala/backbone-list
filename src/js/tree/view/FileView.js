@@ -14,7 +14,7 @@ define([
 
 		events: {
 			"dblclick .title"       : "edit",
-			"blur .title-edit"      : "cancelEdit",
+			//"blur .title-edit"      : "cancelEdit",
 			"keypress .title-edit"  : "saveEditOnEnter"
 		},
 

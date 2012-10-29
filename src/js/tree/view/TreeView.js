@@ -15,8 +15,7 @@ define([
 		},
 
 		render: function () {
-			FolderView.prototype.render.call(this);
-
+			this._renderChildren();
 			return this;
 		}
 	});

@@ -2,8 +2,9 @@ define([
 	"backbone",
 	"underscore",
 	"jquery",
-	"tree/model/TreeItem"
-], function (Backbone, _, $, TreeItem) {
+	"tree/model/TreeItem",
+	"tree/model/Folder"
+], function (Backbone, _, $, TreeItem, Folder) {
 	var Folder = TreeItem.extend({
 		initialize: function () {
 			TreeItem.prototype.initialize.call(this);
@@ -14,6 +15,10 @@ define([
 		},
 
 		add: function (child) {
+			if ((child instanceof Folder) && (child.get("children").length === 0)) {
+				child.set("visible", false);
+			}
+
 			this.get("children").add(child);
 		},
 

@@ -38,5 +38,14 @@ define([
 
 			chai.assert.isString(model.get("icon"));
 		});
+
+		it("sets visiblity to hidden if a folder is added with no children", function () {
+			var folder = new Folder(),
+				emptyFolder = new Folder();
+
+			folder.add(emptyFolder);
+
+			chai.assert.isFalse(emptyFolder.get("visible"));
+		});
 	});
 });

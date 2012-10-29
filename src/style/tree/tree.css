@@ -20,14 +20,6 @@
 .tree .file.editing {
   background-color: #ebebeb;
 }
-.tree .folder ul {
-  list-style: none;
-  padding-left: 30px;
-}
-.tree .folder ul li {
-  margin: 2px;
-  padding: 4px;
-}
 .tree .folder .icon-folder.open {
   background-image: url("img/folder-open.gif");
 }
@@ -67,3 +59,13 @@
   background-repeat: no-repeat;
   margin-right: 5px;
 }
+.tree ul {
+  list-style: none;
+  padding-left: 30px;
+}
+.tree ul li {
+  margin: 2px;
+  padding: 4px;
+}
+
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

@@ -17,9 +17,9 @@ define([
 
 		childViews: null,
 
-		_domNodeHeader: null,
+		_$header: null,
 
-		_domNodeChildren: null,
+		_$children: null,
 
 		events: {
 			"click .arrow" : "showHideChildren"
@@ -31,8 +31,8 @@ define([
 			this.model.get("children").on("remove", this.onChildModelRemoved, this);
 			this.model.on("change:visible", this.onVisibilityChange, this);
 
-			this._domNodeHeader = $(this.make("div")).appendTo(this.el);
-			this._domNodeChildren = $(this.make("div")).appendTo(this.el);
+			this._$header = $(this.make("div")).appendTo(this.el);
+			this._$children = $(this.make("div")).appendTo(this.el);
 		},
 
 		render: function () {
@@ -88,7 +88,7 @@ define([
 
 		_renderHeader: function () {
 			var result = this.template(this.model.attributes);
-			this._domNodeHeader.html(result);
+			this._$header.html(result);
 		},
 
 		_renderChildren: function () {
@@ -98,7 +98,7 @@ define([
 				ul.append(child.render().el);
 			}, this);
 
-			this._domNodeChildren.html(ul);
+			this._$children.html(ul);
 		}
 	});
 
