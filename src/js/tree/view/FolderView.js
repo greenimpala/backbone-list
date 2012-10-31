@@ -3,13 +3,14 @@ define([
 	"underscore",
 	"jquery",
 	"handlebars",
+	"tree/view/TreeItemView",
 	"tree/model/File",
 	"tree/model/Folder",
 	"tree/view/FileView",
 	"text!tree/templates/FolderView.html"
-], function (Backbone, _, $, Handlebars, File, Folder, FileView, template) {
-	var FolderView = Backbone.View.extend({
-		className: "folder",
+], function (Backbone, _, $, Handlebars, TreeItemView, File, Folder, FileView, template) {
+	var FolderView = TreeItemView.extend({
+		className: "item folder",
 
 		tagName: "li",
 
@@ -22,11 +23,14 @@ define([
 		_$children: null,
 
 		events: {
-			"click .arrow" : "showHideChildren"
+			"click .arrow"      : "showHideChildren",
+			"dblclick .icon"    : "showHideChildren"
 		},
 
 		initialize: function () {
+			this.events = _.extend({}, TreeItemView.prototype.events, this.events);
 			this.childViews = {};
+
 			this.model.get("children").on("add", this.onChildModelAdded, this);
 			this.model.get("children").on("remove", this.onChildModelRemoved, this);
 			this.model.on("change:visible", this.onVisibilityChange, this);
@@ -45,7 +49,8 @@ define([
 		onChildModelAdded: function (model) {
 			this._createChildView(model);
 
-			// Manually trigger the 'add' event for any child models
+			// If this is a Folder model then we need to
+			// manually trigger the 'add' event for any child models
 			if (model instanceof Folder) {
 				model.get("children").each(function (child) {
 					model.get("children").trigger("add", child);

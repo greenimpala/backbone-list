@@ -16,6 +16,7 @@ define([
 
 		render: function () {
 			this._renderChildren();
+
 			return this;
 		}
 	});

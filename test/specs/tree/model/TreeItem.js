@@ -15,5 +15,12 @@ define([
 
 			chai.assert.isBoolean(model.get("visible"));
 		});
+
+		it("can set a function callback", function () {
+			var model = new TreeItem();
+			model.set("onClick", function () {});
+
+			chai.assert.isFunction(model.get("onClick"));
+		});
 	});
 });

@@ -4,12 +4,12 @@
   float: left;
   padding: 10px;
 }
-.tree .file .title-edit input {
+.tree .item .title-edit input {
   border: 1px solid #8c8c8c;
   outline: none;
   padding: 2px;
 }
-.tree .file .title-edit span {
+.tree .item .title-edit span {
   margin-left: 4px;
   margin-right: 4px;
   color: #8c8c8c;
@@ -19,6 +19,8 @@
 }
 .tree .file.editing {
   background-color: #ebebeb;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .tree .folder .icon-folder.open {
   background-image: url("img/folder-open.gif");
@@ -30,6 +32,7 @@
   float: left;
   width: 15px;
   height: 15px;
+  cursor: pointer;
 }
 .tree .folder .arrow .arrow-icon {
   float: left;
@@ -59,13 +62,16 @@
   background-repeat: no-repeat;
   margin-right: 5px;
 }
-.tree ul {
-  list-style: none;
-  padding-left: 30px;
+.tree .strong {
+  font-weight: bold;
 }
-.tree ul li {
+.tree ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+.tree li {
   margin: 2px;
   padding: 4px;
+  padding-left: 20px;
 }
-
-/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

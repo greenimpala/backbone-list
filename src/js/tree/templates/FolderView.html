@@ -2,6 +2,10 @@
     <span class="arrow-icon {{#if visible}}open{{else}}closed{{/if}}"></span>
 </span>
 <span class="icon {{icon}} {{#if visible}}open{{else}}closed{{/if}}"></span>
-<span>
-    <strong>{{title}}</strong>
+<span class="title-edit hidden">
+    <input value="{{title}}" />
+    <span>Press Enter to save</span>
+</span>
+<span class="title strong" title="Double-click to edit">
+    {{title}}
 </span>

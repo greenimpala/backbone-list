@@ -93,7 +93,7 @@ define([
 			chai.assert.isTrue(spy.calledThrice);
 		});
 
-		it("creates a UL with n children LI elements", function () {
+		it("creates a UL with n children LI elements when render is called", function () {
 			var folder = new Folder(),
 				view = new FolderView({ model: folder });
 
