@@ -1,9 +1,12 @@
 Backbone-Tree
 ====================
 
-A simple composite tree structure implementation in Backbone.js.
+A lightweight tree component for Backbone.js apps.
 
-* Lightweight and extendable
-* Uses RequireJS modules
-* Namespaced LESS / CSS
-* Full test suite
+* Extendable
+* Modular (require.js)
+* Name-spaced LESS / CSS
+* Tested
+
+<img src="https://raw.github.com/st3redstripe/Backbone-Tree/master/src/tree.png"/>
+
