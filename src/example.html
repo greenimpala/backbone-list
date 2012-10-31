@@ -1,0 +1,58 @@
+<html>
+<head>
+	<title>Backbone-Tree</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet/less" type="text/css" href="style/tree/tree.less">
+    <script src="js/vendor/less/less.js"></script>
+	<script data-main="js/bootstrap" src="js/vendor/require/require.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+	<script type="text/javascript">
+        localStorage.clear();
+
+		require([
+			"tree/model/Tree",
+            "tree/model/File",
+            "tree/model/Folder",
+            "tree/view/TreeView"
+		], function (Tree, File, Folder, TreeView) {
+            var model = new Tree();
+            var view = new TreeView({ model: model });
+
+            var folder = new Folder({ title: "Pictures", visible: true });
+            folder.add(new File({ title: "Safari.jpg" }));
+            folder.add(new File({ title: "Sun.jpg" }));
+
+            var pictures = new Folder({ title: "Wallpapers" });
+            pictures.add(new File({ title: "Space.png" }));
+            pictures.add(new File({ title: "Waves.png" }));
+
+            folder.add(pictures);
+            folder.add(new File({ title: "Animals.jpg" }));
+
+            var music = new Folder({ title: "Music", visible: true });
+
+            var beatles = new Folder({ title: "The Beatles" });
+            beatles.add(new File({ title: "Playlist.m3u" }));
+            var whiteAlbum = new Folder({ title: "The White Album" });
+            var soul = new Folder({ title: "Rubber Soul" });
+            whiteAlbum.add(new File({ title: "Back In The U.S.S.R" }));
+            whiteAlbum.add(new File({ title: "Dear Prudence" }));
+            whiteAlbum.add(new File({ title: "Glass Onion" }));
+            beatles.add(soul);
+
+            soul.add(new File({ title: "Drive My Car" }));
+            soul.add(new File({ title: "Norwegian Wood" }));
+            beatles.add(whiteAlbum);
+
+            music.add(beatles);
+
+            model.add(music);
+            model.add(folder);
+
+            $("#container").html(view.render().el);
+		});
+	</script>
+</body>
+</html>
