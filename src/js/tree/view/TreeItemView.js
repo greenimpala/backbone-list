@@ -12,7 +12,8 @@ define([
 		events: {
 			"dblclick .title"       : "edit",
 			"blur .title-edit"      : "cancelEdit",
-			"keypress .title-edit"  : "saveEditOnEnter"
+			"keypress .title-edit"  : "saveEditOnEnter",
+			"click .title"          : "fireUserOnClick"
 		},
 
 		edit: function (e) {
@@ -38,13 +39,21 @@ define([
 		saveEditOnEnter: function (e) {
 			e.stopImmediatePropagation();
 
-			var title = $.trim(e.target.value);
+			var title = $.trim(e.target.value),
+				enterKeyCode = 13;
 
-			// If Enter key pressed
-			if (e.which === 13 && title.length > 0) {
+			if (e.which === enterKeyCode && title.length > 0) {
 				this.model.set("title", e.target.value);
 				this.render();
 				this.$el.removeClass("editing");
+			}
+		},
+
+		fireUserOnClick: function () {
+			var onClick = this.model.get("onClick");
+
+			if (onClick && _.isFunction(onClick)) {
+				onClick(this.model);
 			}
 		}
 	});

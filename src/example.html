@@ -25,7 +25,12 @@
             folder.add(new File({ title: "Sun.jpg" }));
 
             var pictures = new Folder({ title: "Wallpapers" });
-            pictures.add(new File({ title: "Space.png" }));
+            pictures.add(new File({
+                title: "Space.png",
+                onClick: function () {
+                    alert("You clicked on Space.jpg");
+                }
+            }));
             pictures.add(new File({ title: "Waves.png" }));
 
             folder.add(pictures);
