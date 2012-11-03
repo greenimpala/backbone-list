@@ -3,8 +3,9 @@ define([
 	"underscore",
 	"jquery",
 	"handlebars",
-	"tree/view/FolderView"
-], function (Backbone, _, $, Handlebars, FolderView) {
+	"tree/view/FolderView",
+	"text!tree/templates/_TreeItemView.html"
+], function (Backbone, _, $, Handlebars, FolderView, _TreeItemView) {
 	var TreeView = FolderView.extend({
 		tagName: "div",
 
@@ -12,6 +13,11 @@ define([
 
 		initialize: function () {
 			FolderView.prototype.initialize.call(this);
+			this.registerPartials();
+		},
+
+		registerPartials: function () {
+			Handlebars.registerPartial("TreeItemView", _TreeItemView);
 		},
 
 		render: function () {

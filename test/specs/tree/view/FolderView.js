@@ -1,12 +1,17 @@
 define([
 	"underscore",
 	"handlebars",
+	"tree/view/TreeView",
 	"tree/view/FolderView",
 	"tree/view/FileView",
 	"tree/model/Tree",
 	"tree/model/File",
 	"tree/model/Folder"
-], function (_, Handlebars, FolderView, FileView, Tree, File, Folder) {
+], function (_, Handlebars, TreeView, FolderView, FileView, Tree, File, Folder) {
+
+	(function () {
+		TreeView.prototype.registerPartials();
+	}());
 
 	describe("tree/view/FolderView", function () {
 
