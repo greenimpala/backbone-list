@@ -59,7 +59,7 @@ Note that the event callback is passed the relevent model.
 * `clicked`: Denotes that a folder or file has been clicked.
 
 ```js
-model.on("visiblity", function (model) {
+treeModel.on("visiblity", function (model) {
   console.log("A folder has been " + (model.get("visibile") ? "expanded" : "closed"));
 });
 ```
