@@ -23,7 +23,7 @@ var view = new TreeView({ model: model });
 
 ### Adding nodes
 
-You can add `Folder` models or `File` models to your main model. Naturally, if you add a `Folder` model you can add folders and files to that also - creating your composite hierachy.
+You can add `Folder` models or `File` models to your main model. If you add a `Folder` model, you can add files and folders to it - creating a composite hierachy.
 
 ```js
 var folder = new Folder({ title: "Pictures" });
