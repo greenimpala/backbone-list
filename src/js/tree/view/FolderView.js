@@ -49,9 +49,8 @@ define([
 		onChildModelAdded: function (model) {
 			this._createChildView(model);
 
-			// If this is a Folder model then we need to
-			// manually trigger the 'add' event for any child models
 			if (model instanceof Folder) {
+				// Manually trigger the 'add' event for any child models
 				model.get("children").each(function (child) {
 					model.get("children").trigger("add", child);
 				});
