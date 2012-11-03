@@ -42,8 +42,9 @@ $("#tree-container").html(view.render().el);
 
 ## API
 
-The following attributes can be set on a model:
+The following attributes can be `set` on folder and file models:
 
 * `title`: File or folder name.
 * `onClick`: A function to be executed when an item is clicked. Passed the model of the clicked item as a paramter.
-* `visible`: A boolean denoting whether to collapse or show the node. Only relevent with folders. Default is `true`.
+* `visible`: A boolean denoting whether to collapse or show the node. Only applicable to folders. Default is `true`.
+* `editable`: A boolean denoting whether the item can be edited. Default is `false`.
