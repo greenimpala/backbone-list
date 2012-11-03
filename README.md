@@ -39,3 +39,11 @@ You will only need to render the `TreeView` instance once. This will generate th
 ```js
 $("#tree-container").html(view.render().el);
 ```
+
+## API
+
+The following attributes can be set on a model:
+
+* `title`: File or folder name.
+* `onClick`: A function to be executed when an item is clicked. Passed the model of the clicked item as a paramter.
+* `visible`: A boolean denoting whether to collapse or show the node. Only relevent with folders. Default is `true`.
