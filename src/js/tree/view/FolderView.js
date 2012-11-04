@@ -29,6 +29,8 @@ define([
 
 		initialize: function () {
 			this.events = _.extend({}, TreeItemView.prototype.events, this.events);
+			TreeItemView.prototype.initialize.call(this);
+
 			this.childViews = {};
 
 			this.model.get("children").on("add", this.onChildModelAdded, this);

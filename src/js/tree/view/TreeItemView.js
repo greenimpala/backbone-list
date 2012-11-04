@@ -6,7 +6,8 @@ define([
 ], function (Backbone, _, $, Handlebars) {
 	var TreeItemView = Backbone.View.extend({
 		initialize: function () {
-
+			this.model.on("highlight", this.highlightTitle, this);
+			this.model.on("resetTitle", this.clearTitleHighlights, this)
 		},
 
 		events: {
@@ -49,12 +50,28 @@ define([
 			}
 		},
 
-		fireUserOnClick: function () {
+		fireUserOnClick: function (e) {
+			e.stopImmediatePropagation();
+
 			var onClick = this.model.get("onClick");
 
 			if (onClick && _.isFunction(onClick)) {
 				onClick(this.model);
 			}
+		},
+
+		highlightTitle: function (from, to) {
+			var title = this.model.get("title"),
+				pre = title.substring(0, from),
+				mid = title.substring(from, to),
+				post = title.substring(to, title.length);
+
+			this.$el.find(".title:first")
+				.html(pre + '<span class="highlight">' + mid +  '</span>' + post);
+		},
+
+		clearTitleHighlights: function () {
+			this.$el.find(".title:first").html(this.model.get("title"));
 		}
 	});
 

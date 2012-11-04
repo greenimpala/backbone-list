@@ -1,6 +1,7 @@
 define([
-	"tree/model/Folder"
-], function (Folder) {
+	"tree/model/Folder",
+	"tree/model/File"
+], function (Folder, File) {
 	describe("tree/model/Folder", function () {
 
 		it("should instantiate", function () {
@@ -46,6 +47,36 @@ define([
 			folder.add(emptyFolder);
 
 			chai.assert.isFalse(emptyFolder.get("visible"));
+		});
+
+		it("can get all children as array", function () {
+			var folder = new Folder();
+
+			folder.add(new File());
+			folder.add(new Folder());
+			folder.add(new File());
+
+			var children = folder.getChildren();
+
+			chai.assert.isArray(children);
+			chai.assert.equal(children.length, 3);
+		});
+
+		it("can get all children as array recursively", function () {
+			var folder = new Folder(),
+				nested = new Folder();
+
+			folder.add(new File());
+			folder.add(new Folder());
+			nested.add(new File());
+			nested.add(new Folder());
+			folder.add(nested);
+
+
+			var children = folder.getChildren(true);
+
+			chai.assert.isArray(children);
+			chai.assert.equal(children.length, 5);
 		});
 	});
 });

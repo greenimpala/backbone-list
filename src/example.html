@@ -7,7 +7,11 @@
 	<script data-main="js/bootstrap" src="js/vendor/require/require.js"></script>
 </head>
 <body>
-    <div id="container"></div>
+    <div id="container">
+        <input id="search-field" style="display: block" type="text">
+        <span id="search-ticker" style="display: inline-block"></span>
+        
+    </div>
 	<script type="text/javascript">
         localStorage.clear();
 
@@ -18,23 +22,37 @@
             "tree/view/TreeView"
 		], function (Tree, File, Folder, TreeView) {
             var model = new Tree();
-            var view = new TreeView({ model: model });
+            var view = new TreeView({
+                model: model,
+                search: {
+                    input: $("#search-field"),
+                    ticker: $("#search-ticker")
+                }
+            });
 
             var folder = new Folder({ title: "Pictures", visible: true });
-            folder.add(new File({ title: "Safari.jpg" }));
+            folder.add(new File({ title: "Moon.jpg" }));
             folder.add(new File({ title: "Sun.jpg" }));
 
-            var pictures = new Folder({ title: "Wallpapers" });
-            pictures.add(new File({
-                title: "Space.png",
-                onClick: function () {
-                    alert("You clicked on Space.jpg");
-                }
-            }));
-            pictures.add(new File({ title: "Waves.png" }));
+            var pictures = new Folder({ title: "Wallpapers", visible: true });
+            pictures.add(new File({ title: "Meteor_Shower.png" }));
+            pictures.add(new File({ title: "Cosmos.png" }));
+            pictures.add(new File({ title: "Flying_Spaceman_25.png" }));
+            pictures.add(new File({ title: "Alien_Spacecraft_2.png" }));
+            pictures.add(new File({ title: "Space_4.png" }));
+            pictures.add(new File({ title: "Astro_In_Space_22.png" }));
+            pictures.add(new File({ title: "Time_And_Space.png" }));
+            pictures.add(new File({ title: "Hubble_Space_Telescope.png" }));
+            pictures.add(new File({ title: "Earth_From_Space.png" }));
+            var spaceFolder = new Folder({ title: "Blackholes", visible: true });
+            pictures.add(spaceFolder);
+            spaceFolder.add(new File({ title: "Blackhole_Space_45.png" }));
+            spaceFolder.add(new File({ title: "Blackhole_Space_222.png" }));
+            spaceFolder.add(new File({ title: "Blackhole_Space_35.png" }));
+            spaceFolder.add(new File({ title: "Blackhole_Space_45.png" }));
+            spaceFolder.add(new File({ title: "Blackhole_Space_66.png" }));
 
             folder.add(pictures);
-            folder.add(new File({ title: "Animals.jpg" }));
 
             var music = new Folder({ title: "Music", visible: true });
 
@@ -56,7 +74,7 @@
             model.add(music);
             model.add(folder);
 
-            $("#container").html(view.render().el);
+            $("#container").append(view.render().el);
 		});
 	</script>
 </body>

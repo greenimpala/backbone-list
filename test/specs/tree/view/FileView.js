@@ -14,7 +14,7 @@ require([
 			chai.assert.isDefined(new FileView({ model: model }));
 		});
 
-		it("Edit post hides title and shows editable form field", function () {
+		it("hides title and shows editable form field when editing a post", function () {
 			var model = new File(),
 				view = new FileView({ model: model });
 
@@ -24,7 +24,7 @@ require([
 			chai.assert.isFalse(view.$el.find(".title-edit").hasClass("hidden"));
 		});
 
-		it("Cancel edit hides editable form field and shows title", function () {
+		it("hides editable form field and shows title when cancelling an edit", function () {
 			var model = new File(),
 				view = new FileView({ model: model });
 

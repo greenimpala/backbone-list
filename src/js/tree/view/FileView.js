@@ -19,6 +19,7 @@ define([
 
 		initialize: function () {
 			this.events = _.extend({}, TreeItemView.prototype.events, this.events);
+			TreeItemView.prototype.initialize.call(this);
 		},
 
 		render: function () {
