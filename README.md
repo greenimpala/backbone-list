@@ -67,3 +67,7 @@ treeModel.on("visiblity", function (model) {
 ## Searching
 
 To make the tree searchable, include a `search` property when instantiating the main view.
+
+## Tests
+
+This project uses the test framework Mocha. To run the tests, open the spec runner found at `test/index.html` in a browser.
