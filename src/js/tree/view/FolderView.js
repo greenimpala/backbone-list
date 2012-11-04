@@ -33,8 +33,8 @@ define([
 
 			this.childViews = {};
 
-			this.model.get("children").on("add", this.onChildModelAdded, this);
-			this.model.get("children").on("remove", this.onChildModelRemoved, this);
+			this.model.get("children").on("add", this.addChildViewForModel, this);
+			this.model.get("children").on("remove", this.removeChildViewForModel, this);
 			this.model.on("change:visible", this.onVisibilityChange, this);
 
 			this._$header = $(this.make("div")).appendTo(this.el);
@@ -48,7 +48,7 @@ define([
 			return this;
 		},
 
-		onChildModelAdded: function (model) {
+		addChildViewForModel: function (model) {
 			this._createChildView(model);
 
 			if (model instanceof Folder) {
@@ -59,7 +59,7 @@ define([
 			}
 		},
 
-		onChildModelRemoved: function (model) {
+		removeChildViewForModel: function (model) {
 			this._deleteChildView(model);
 		},
 

@@ -81,3 +81,11 @@
   padding: 4px;
   padding-left: 20px;
 }
+.tree #search input {
+  border: 1px solid #696969;
+  height: 20px;
+  margin-bottom: 8px;
+}
+.tree *:focus {
+  outline: none;
+}

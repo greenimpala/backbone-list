@@ -5,26 +5,27 @@ define([
 	"handlebars",
 	"tree/view/FolderView",
 	"text!tree/templates/_TreeItemView.html",
-	"text!tree/templates/Ticker.html"
-], function (Backbone, _, $, Handlebars, FolderView, _TreeItemView, Ticker) {
+	"text!tree/templates/Search.html"
+], function (Backbone, _, $, Handlebars, FolderView, _TreeItemView, Search) {
 	var TreeView = FolderView.extend({
 		tagName: "div",
 
 		className: "tree",
 
-		tickerTemplate: Handlebars.compile(Ticker),
+		searchTemplate: Handlebars.compile(Search),
 
 		_$searchField: null,
 
 		_$ticker: null,
 
-		initialize: function (options) {
+		initialize: function (args) {
 			_.bindAll(this, "onSearchKeypress");
 			this.model.on("search", this.updateTicker, this);
 
-			if (options.search) {
+			if ((args.options || {}).search) {
 				this._initializeSearch();
 			}
+
 			this.registerPartials();
 
 			FolderView.prototype.initialize.call(this);
@@ -47,25 +48,19 @@ define([
 		},
 
 		updateTicker: function (results) {
-			if (this._$ticker) {
-				this._$ticker.html(this.tickerTemplate({
-					results: results.length
-				}));
-			}
+			this._$ticker
+				.toggleClass("hidden", results.length === 0)
+				.find("strong")
+				.html(results.length)
 		},
 
 		_initializeSearch: function () {
-			var input = this.options.search.input,
-				ticker = this.options.search.ticker;
+			this.$el.append(this.searchTemplate());
 
-			if (input) {
-				this._$searchField = input;
-				input.on("keyup", this.onSearchKeypress);
-			}
+			this._$searchField = this.$el.find("#search input");
+			this._$ticker = this.$el.find("#search span");
 
-			if (ticker) {
-				this._$ticker = $(ticker);
-			}
+			this._$searchField.keyup(this.onSearchKeypress);
 		}
 	});
 

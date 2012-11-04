@@ -15,8 +15,6 @@
 <body>
 <h1>Backbone-Tree</h1>
     <div id="container">
-        <input id="search-field" style="display: inline-block" type="text">
-        <span id="search-ticker" style="display: inline-block"></span>
     </div>
 	<script type="text/javascript">
 		require([
@@ -28,9 +26,8 @@
             var model = new Tree();
             var view = new TreeView({
                 model: model,
-                search: {
-                    input: $("#search-field"),
-                    ticker: $("#search-ticker")
+                options: {
+                    search: true
                 }
             });
 
