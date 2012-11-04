@@ -57,10 +57,12 @@ define([
 					model.get("children").trigger("add", child);
 				});
 			}
+			this.render();
 		},
 
 		removeChildViewForModel: function (model) {
 			this._deleteChildView(model);
+			this.render();
 		},
 
 		onVisibilityChange: function () {
