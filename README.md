@@ -63,3 +63,7 @@ treeModel.on("visiblity", function (model) {
   console.log("A folder has been " + (model.get("visibile") ? "expanded" : "closed"));
 });
 ```
+
+## Searching
+
+To make the tree searchable, include a `search` property when instantiating the main view.

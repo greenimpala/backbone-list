@@ -1,7 +1,6 @@
 .tree {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
-  float: left;
   padding: 10px;
 }
 .tree .item .title-edit input {
@@ -13,6 +12,10 @@
   margin-left: 4px;
   margin-right: 4px;
   color: #8c8c8c;
+}
+.tree .item .highlight {
+  background-color: #ba0000;
+  color: white;
 }
 .tree .file .icon-file {
   background-image: url("img/file.gif");
@@ -61,6 +64,9 @@
   height: 16px;
   background-repeat: no-repeat;
   margin-right: 5px;
+}
+.tree span.title {
+  cursor: default;
 }
 .tree .strong {
   font-weight: bold;

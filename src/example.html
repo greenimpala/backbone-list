@@ -1,20 +1,24 @@
 <html>
 <head>
 	<title>Backbone-Tree</title>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<link rel="stylesheet/less" type="text/css" href="style/tree/tree.less">
-    <script src="js/vendor/less/less.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/tree/tree.css">
 	<script data-main="js/bootstrap" src="js/vendor/require/require.js"></script>
+    <style>
+        h1 {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 24px;
+            border-bottom: 1px solid #d3d3d3;
+            padding-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
+<h1>Backbone-Tree</h1>
     <div id="container">
-        <input id="search-field" style="display: block" type="text">
+        <input id="search-field" style="display: inline-block" type="text">
         <span id="search-ticker" style="display: inline-block"></span>
-        
     </div>
 	<script type="text/javascript">
-        localStorage.clear();
-
 		require([
 			"tree/model/Tree",
             "tree/model/File",
@@ -30,32 +34,32 @@
                 }
             });
 
-            var folder = new Folder({ title: "Pictures", visible: true });
-            folder.add(new File({ title: "Moon.jpg" }));
-            folder.add(new File({ title: "Sun.jpg" }));
+            var folder = new Folder({ title: "Sparks.jpeg", visible: true });
 
             var pictures = new Folder({ title: "Wallpapers", visible: true });
+            folder.add(new File({ title: "Example.jpeg" }));
             pictures.add(new File({ title: "Meteor_Shower.png" }));
             pictures.add(new File({ title: "Cosmos.png" }));
             pictures.add(new File({ title: "Flying_Spaceman_25.png" }));
             pictures.add(new File({ title: "Alien_Spacecraft_2.png" }));
             pictures.add(new File({ title: "Space_4.png" }));
+            pictures.add(new File({ title: "Moon.jpg" }));
+            pictures.add(new File({ title: "Sun.jpg" }));
             pictures.add(new File({ title: "Astro_In_Space_22.png" }));
             pictures.add(new File({ title: "Time_And_Space.png" }));
             pictures.add(new File({ title: "Hubble_Space_Telescope.png" }));
             pictures.add(new File({ title: "Earth_From_Space.png" }));
-            var spaceFolder = new Folder({ title: "Blackholes", visible: true });
-            pictures.add(spaceFolder);
-            spaceFolder.add(new File({ title: "Blackhole_Space_45.png" }));
-            spaceFolder.add(new File({ title: "Blackhole_Space_222.png" }));
-            spaceFolder.add(new File({ title: "Blackhole_Space_35.png" }));
-            spaceFolder.add(new File({ title: "Blackhole_Space_45.png" }));
-            spaceFolder.add(new File({ title: "Blackhole_Space_66.png" }));
 
+            var spaceFolder = new Folder({ title: "Misc", visible: true });
+            spaceFolder.add(new File({ title: "Blackhole_Spans.png" }));
+            spaceFolder.add(new File({ title: "Blackhole_Space_222.png" }));
+            spaceFolder.add(new File({ title: "Telescope.png" }));
+            spaceFolder.add(new File({ title: "Misc_Spacial.png" }));
+            spaceFolder.add(new File({ title: "Blackhole_Space_66.png" }));
+            pictures.add(spaceFolder);
             folder.add(pictures);
 
             var music = new Folder({ title: "Music", visible: true });
-
             var beatles = new Folder({ title: "The Beatles" });
             beatles.add(new File({ title: "Playlist.m3u" }));
             var whiteAlbum = new Folder({ title: "The White Album" });
@@ -64,13 +68,10 @@
             whiteAlbum.add(new File({ title: "Dear Prudence" }));
             whiteAlbum.add(new File({ title: "Glass Onion" }));
             beatles.add(soul);
-
             soul.add(new File({ title: "Drive My Car" }));
             soul.add(new File({ title: "Norwegian Wood" }));
             beatles.add(whiteAlbum);
-
             music.add(beatles);
-
             model.add(music);
             model.add(folder);
 
