@@ -66,7 +66,7 @@ treeModel.on("visiblity", function (model) {
 
 ## Searching
 
-To make the tree searchable, include `search: true` to an options hash when instantiating the main view.
+To make the tree searchable, add `search: true` to an options hash when instantiating the main view.
 
 ```js
 var view = new TreeView({
