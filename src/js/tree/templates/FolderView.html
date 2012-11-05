@@ -1,5 +1,5 @@
 <span class="arrow">
-    <span class="arrow-icon {{#if visible}}open{{else}}closed{{/if}}"></span>
+    <span class="arrow-icon {{#unless visible}}closed{{/unless}}"></span>
 </span>
-<span class="icon {{icon}} {{#if visible}}open{{else}}closed{{/if}}"></span>
+<span class="icon {{icon}} {{#unless visible}}closed{{/unless}}"></span>
 {{> TreeItemView}}

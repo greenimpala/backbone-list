@@ -1,10 +1,9 @@
 .folder {
   .icon-folder {
+    background-image:url("img/folder-closed.gif");
+
     &.open {
       background-image:url("img/folder-open.gif");
-    }
-    &.closed {
-      background-image:url("img/folder-closed.gif");
     }
   }
 
@@ -19,16 +18,16 @@
       width: 0;
       height: 0;
 
-      &.closed {
-        margin-top: 1px;
-        margin-left: 3px;
-        border-top: 5px solid transparent;
-        border-bottom: 5px solid transparent;
-        border-left: 5px solid black;
-      }
+      margin-top: 1px;
+      margin-left: 3px;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 5px solid black;
 
       &.open {
         margin-top: 3px;
+        margin-left: 0px;
+        border-bottom: none;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
         border-top: 5px solid black;

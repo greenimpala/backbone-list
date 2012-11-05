@@ -57,20 +57,22 @@ define([
 					model.get("children").trigger("add", child);
 				});
 			}
-			this.render();
 		},
 
 		removeChildViewForModel: function (model) {
 			this._deleteChildView(model);
-			this.render();
 		},
 
 		onVisibilityChange: function () {
-			this.render();
+			this.$el
+				.find("span.arrow-icon:first, span.icon:first")
+				.toggleClass("open", this.model.get("visible"));
+
+			this.$el.find("ul:first").toggle();
 		},
 
 		showHideChildren: function (e) {
-			e.preventDefault();
+			e.stopImmediatePropagation();
 
 			var visible = this.model.get("visible");
 			this.model.set("visible", visible ? false : true);

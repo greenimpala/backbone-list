@@ -25,11 +25,11 @@
   padding-top: 0px;
   padding-bottom: 0px;
 }
+.tree .folder .icon-folder {
+  background-image: url("img/folder-closed.gif");
+}
 .tree .folder .icon-folder.open {
   background-image: url("img/folder-open.gif");
-}
-.tree .folder .icon-folder.closed {
-  background-image: url("img/folder-closed.gif");
 }
 .tree .folder .arrow {
   float: left;
@@ -41,8 +41,6 @@
   float: left;
   width: 0;
   height: 0;
-}
-.tree .folder .arrow .arrow-icon.closed {
   margin-top: 1px;
   margin-left: 3px;
   border-top: 5px solid transparent;
@@ -51,6 +49,8 @@
 }
 .tree .folder .arrow .arrow-icon.open {
   margin-top: 3px;
+  margin-left: 0px;
+  border-bottom: none;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid black;

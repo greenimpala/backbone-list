@@ -34,7 +34,19 @@
             var folder = new Folder({ title: "Sparks.jpeg", visible: true });
 
             var pictures = new Folder({ title: "Wallpapers", visible: true });
+            folder.add(pictures);
             folder.add(new File({ title: "Example.jpeg" }));
+            pictures.add(new File({ title: "Meteor_Shower.png" }));
+            pictures.add(new File({ title: "Cosmos.png" }));
+            pictures.add(new File({ title: "Flying_Spaceman_25.png" }));
+            pictures.add(new File({ title: "Alien_Spacecraft_2.png" }));
+            pictures.add(new File({ title: "Space_4.png" }));
+            pictures.add(new File({ title: "Moon.jpg" }));
+            pictures.add(new File({ title: "Sun.jpg" }));
+            pictures.add(new File({ title: "Astro_In_Space_22.png" }));
+            pictures.add(new File({ title: "Time_And_Space.png" }));
+            pictures.add(new File({ title: "Hubble_Space_Telescope.png" }));
+            pictures.add(new File({ title: "Earth_From_Space.png" }));
             pictures.add(new File({ title: "Meteor_Shower.png" }));
             pictures.add(new File({ title: "Cosmos.png" }));
             pictures.add(new File({ title: "Flying_Spaceman_25.png" }));
@@ -54,7 +66,7 @@
             spaceFolder.add(new File({ title: "Misc_Spacial.png" }));
             spaceFolder.add(new File({ title: "Blackhole_Space_66.png" }));
             pictures.add(spaceFolder);
-            folder.add(pictures);
+
 
             var music = new Folder({ title: "Music", visible: true });
             var beatles = new Folder({ title: "The Beatles" });
