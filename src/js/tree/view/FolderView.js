@@ -68,7 +68,7 @@ define([
 				.find("span.arrow-icon:first, span.icon:first")
 				.toggleClass("open", this.model.get("visible"));
 
-			this.$el.find("ul:first").toggle();
+			this.$el.find("ul:first").toggleClass("hidden");
 		},
 
 		showHideChildren: function (e) {
