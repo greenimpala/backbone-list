@@ -1,7 +1,7 @@
 require.config({
 	paths: {
 		jquery: 'vendor/jquery/jquery',
-		underscore: 'vendor/underscore/underscore',
+		underscore: 'vendor/underscore/lodash',
 		backbone: 'vendor/backbone/backbone',
 		handlebars: "vendor/handlebars/handlebars",
 		text: "vendor/require/text",
