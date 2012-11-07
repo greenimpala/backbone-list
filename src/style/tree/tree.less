@@ -8,7 +8,11 @@
   padding: 10px;
 
   .hidden {
-    display: none;
+    display: none !important;
+  }
+
+  .highlight {
+    color: #1e90ff;
   }
 
   .icon {
@@ -39,10 +43,20 @@
     padding-left: 20px;
   }
 
-  #search input {
-    border: 1px solid #696969;
-    height: 20px;
-    margin-bottom: 8px;
+  #search {
+    input {
+      border: 1px solid #696969;
+      height: 20px;
+      margin-bottom: 8px;
+    }
+
+    #results {
+      display: inline-block;
+
+      #clear-results {
+        cursor: pointer;
+      }
+    }
   }
 
   *:focus {

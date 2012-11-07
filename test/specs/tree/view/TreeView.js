@@ -42,5 +42,19 @@ define([
 
 			chai.assert.equal(2, tree.$el.find("#search span strong").html());
 		});
+
+		it("clears results when clear clicked on", function () {
+			var model = new Tree();
+			var tree = new TreeView({
+				model: model,
+				options: { search: true }
+			}).render();
+
+			tree.$el.find("#search input").val("testVal");
+			chai.assert.equal("testVal", tree.$el.find("#search input").val());
+
+			tree.$el.find("#search #clear-results").click();
+			chai.assert.equal("", tree.$el.find("#search input").val());
+		});
 	});
 });

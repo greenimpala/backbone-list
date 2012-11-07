@@ -16,13 +16,18 @@ define([
 
 		_$searchField: null,
 
-		_$ticker: null,
+		_$searchResults: null,
+
+		events: {
+			"click #clear-results"  : "clearResults",
+			"keyup #search input"   : "onSearchKeypress"
+		},
 
 		initialize: function (args) {
-			_.bindAll(this, "onSearchKeypress");
+			_.bindAll(this, "onSearchKeypress", "clearResults");
 			this.model.on("search", this.updateTicker, this);
 
-			if ((args.options || {}).search) {
+			if (args.options && args.options.search) {
 				this._initializeSearch();
 			}
 
@@ -33,6 +38,10 @@ define([
 
 		registerPartials: function () {
 			Handlebars.registerPartial("TreeItemView", _TreeItemView);
+		},
+
+		clearResults: function () {
+			this._$searchField.val("").keyup().focus();
 		},
 
 		render: function () {
@@ -48,19 +57,17 @@ define([
 		},
 
 		updateTicker: function (results) {
-			this._$ticker
+			this._$searchResults
 				.toggleClass("hidden", results.length === 0)
 				.find("strong")
-				.html(results.length)
+				.html(results.length);
 		},
 
 		_initializeSearch: function () {
 			this.$el.append(this.searchTemplate());
 
 			this._$searchField = this.$el.find("#search input");
-			this._$ticker = this.$el.find("#search span");
-
-			this._$searchField.keyup(this.onSearchKeypress);
+			this._$searchResults = this.$el.find("#search #results");
 		}
 	});
 

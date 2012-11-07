@@ -55,7 +55,10 @@
   border-top: 5px solid black;
 }
 .tree .hidden {
-  display: none;
+  display: none !important;
+}
+.tree .highlight {
+  color: #1e90ff;
 }
 .tree .icon {
   float: left;
@@ -84,6 +87,12 @@
   border: 1px solid #696969;
   height: 20px;
   margin-bottom: 8px;
+}
+.tree #search #results {
+  display: inline-block;
+}
+.tree #search #results #clear-results {
+  cursor: pointer;
 }
 .tree *:focus {
   outline: none;
