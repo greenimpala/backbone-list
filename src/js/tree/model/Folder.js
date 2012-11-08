@@ -2,9 +2,8 @@ define([
 	"backbone",
 	"underscore",
 	"jquery",
-	"tree/model/TreeItem",
-	"tree/model/Folder"
-], function (Backbone, _, $, TreeItem, Folder) {
+	"tree/model/TreeItem"
+], function (Backbone, _, $, TreeItem) {
 	var Folder = TreeItem.extend({
 		defaults: {
 			icon: "icon-folder",
@@ -39,6 +38,23 @@ define([
 			});
 
 			return buffer;
+		},
+
+		toJSON: function () {
+			var children = [];
+
+			this.get("children").forEach(function (child) {
+				children.push(child.toJSON());
+			});
+
+			return {
+				model: "Folder",
+				parameters: {
+					visible: this.get("visible"),
+					title: this.get("title")
+				},
+				children: children
+			}
 		}
 	});
 

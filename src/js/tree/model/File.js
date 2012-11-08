@@ -11,6 +11,15 @@ define([
 
 		initialize: function () {
 			TreeItem.prototype.initialize.call(this);
+		},
+
+		toJSON: function () {
+			return {
+				model: "File",
+				parameters: {
+					title: this.get("title")
+				}
+			}
 		}
 	});
 

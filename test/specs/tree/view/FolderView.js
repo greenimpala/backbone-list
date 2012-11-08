@@ -110,7 +110,5 @@ define([
 
 			chai.assert.equal(view.$el.find("ul:first li").length, 3);
 		});
-
-		it
 	});
 });

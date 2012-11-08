@@ -47,22 +47,11 @@ The following attributes can be `set` on folder and file models.
 * `title`: File or folder name.
 * `onClick`: A function to be executed when an item is clicked. Passed the model of the clicked item as a paramter. 
 * `visible`: A boolean denoting whether to collapse or show the node. Only applicable to folders. Default is `true`.
-* `editable`: A boolean denoting whether the item can be edited. Default is `false`. 
+* `editable`: A boolean denoting whether the item can be edited. Default is `false`.
 
-## Events
+## Serializing For Storage
 
-All events are propogated up to the master `Tree` model. You can bind to events as you would with any Backbone event.
-Note that the event callback is passed the relevent model.
-
-* `edited`: Denotes that a folder or file name has been changed.
-* `visiblity`: Denotes that a folder has been collapsed or expanded.
-* `clicked`: Denotes that a folder or file has been clicked.
-
-```js
-treeModel.on("visiblity", function (model) {
-  console.log("A folder has been " + (model.get("visibile") ? "expanded" : "closed"));
-});
-```
+`throw new NotDocumentedException()`
 
 ## Searching
 

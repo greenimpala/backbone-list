@@ -24,6 +24,15 @@ define([
 			chai.assert.lengthOf(model.get("children"), 1);
 		});
 
+		it("can add an array of children", function () {
+			var model = new Folder();
+			var children = [new File(), new File(), new Folder()];
+
+			model.add(children);
+
+			chai.assert.lengthOf(model.get("children"), 3);
+		});
+
 		it("can remove a child", function () {
 			var model = new Folder(),
 				child = new Folder();
@@ -40,7 +49,7 @@ define([
 			chai.assert.isString(model.get("icon"));
 		});
 
-		it("sets visiblity to hidden if a folder is added with no children", function () {
+		it("sets visibility to hidden if a folder is added with no children", function () {
 			var folder = new Folder(),
 				emptyFolder = new Folder();
 
