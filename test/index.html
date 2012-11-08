@@ -22,7 +22,8 @@
                 "tree/model/File"
 			];
 
-            // Pre-fix path to spec folder
+            // Pre-fix correct path to spec folder
+            // Probably a better way to do this
 			for (var i = 0; i < testModules.length; i++) {
 				testModules[i] = "../../test/specs/" + testModules[i];
 			}

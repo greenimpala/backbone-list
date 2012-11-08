@@ -40,7 +40,7 @@ define([
 		},
 
 		deserialize: function (json) {
-			var children = JSON.parse(json);
+			var children = _.isString(json) ? JSON.parse(json) : json;
 
 			var childModels = this._deserializeChildren(children);
 

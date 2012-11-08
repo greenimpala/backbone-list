@@ -1,0 +1,269 @@
+[
+	{
+		"model": "Folder",
+		"parameters": {
+			"visible": true,
+			"title": "Music"
+		},
+		"children": [
+			{
+				"model": "Folder",
+				"parameters": {
+					"visible": false,
+					"title": "The Beatles"
+				},
+				"children": [
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Playlist.m3u"
+						}
+					},
+					{
+						"model": "Folder",
+						"parameters": {
+							"visible": false,
+							"title": "Rubber Soul"
+						},
+						"children": [
+							{
+								"model": "File",
+								"parameters": {
+									"title": "Drive My Car"
+								}
+							},
+							{
+								"model": "File",
+								"parameters": {
+									"title": "Norwegian Wood"
+								}
+							}
+						]
+					},
+					{
+						"model": "Folder",
+						"parameters": {
+							"visible": false,
+							"title": "The White Album"
+						},
+						"children": [
+							{
+								"model": "File",
+								"parameters": {
+									"title": "Back In The U.S.S.R"
+								}
+							},
+							{
+								"model": "File",
+								"parameters": {
+									"title": "Dear Prudence"
+								}
+							},
+							{
+								"model": "File",
+								"parameters": {
+									"title": "Glass Onion"
+								}
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	{
+		"model": "Folder",
+		"parameters": {
+			"visible": true,
+			"title": "Sparks.jpeg"
+		},
+		"children": [
+			{
+				"model": "Folder",
+				"parameters": {
+					"visible": true,
+					"title": "Wallpapers"
+				},
+				"children": [
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Meteor_Shower.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Cosmos.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Flying_Spaceman_25.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Alien_Spacecraft_2.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Space_4.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Moon.jpg"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Sun.jpg"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Astro_In_Space_22.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Time_And_Space.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Hubble_Space_Telescope.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Earth_From_Space.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Meteor_Shower.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Cosmos.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Flying_Spaceman_25.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Alien_Spacecraft_2.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Space_4.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Moon.jpg"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Sun.jpg"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Astro_In_Space_22.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Time_And_Space.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Hubble_Space_Telescope.png"
+						}
+					},
+					{
+						"model": "File",
+						"parameters": {
+							"title": "Earth_From_Space.png"
+						}
+					},
+					{
+						"model": "Folder",
+						"parameters": {
+							"visible": true,
+							"title": "Misc"
+						},
+						"children": [
+							{
+								"model": "File",
+								"parameters": {
+									"title": "Blackhole_Spans.png"
+								}
+							},
+							{
+								"model": "File",
+								"parameters": {
+									"title": "Blackhole_Space_222.png"
+								}
+							},
+							{
+								"model": "File",
+								"parameters": {
+									"title": "Telescope.png"
+								}
+							},
+							{
+								"model": "File",
+								"parameters": {
+									"title": "Misc_Spacial.png"
+								}
+							},
+							{
+								"model": "File",
+								"parameters": {
+									"title": "Blackhole_Space_66.png"
+								}
+							}
+						]
+					}
+				]
+			},
+			{
+				"model": "File",
+				"parameters": {
+					"title": "Example.jpeg"
+				}
+			}
+		]
+	}
+]
