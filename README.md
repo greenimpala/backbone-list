@@ -27,7 +27,7 @@ You can add `Composite` models or `Leaf` models to your main model. If you add a
 
 ```js
 var composite = new Composite({ title: "Pictures" });
-composite.add(new File({ title: "Safari.jpg" }));
+composite.add(new Leaf({ title: "Safari.jpg" }));
 composite.add(new Composite({ title: Holiday Album }));
 
 model.add(composite);
