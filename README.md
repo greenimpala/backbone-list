@@ -1,7 +1,7 @@
 Backbone-List
 ====================
 
-A lightweight list component for Backbone.js apps.
+A lightweight, composite list component for Backbone.js apps.
 
 * Easily extendable
 * Modular (require.js)
@@ -14,7 +14,7 @@ A lightweight list component for Backbone.js apps.
 
 Create a new `List` model and a `ListView` view.
 
-When instantiating the view, pass the model as a parameter to bind it to the view. You can then begin adding nodes to the tree.
+When instantiating the view, pass the model as a parameter to bind it to the view. You can then begin adding nodes to the list.
 
 ```js
 var model = new List();
@@ -23,14 +23,14 @@ var view = new ListView({ model: model });
 
 ### Adding nodes
 
-You can add `Folder` models or `File` models to your main model. If you add a `Folder` model, you can add files and folders to it - creating a composite hierachy.
+You can add `Composite` models or `Leaf` models to your main model. If you add a `Composite` model, you can add leaves and other composites to it - building up a composite hierarchy.
 
 ```js
-var folder = new Folder({ title: "Pictures" });
-folder.add(new File({ title: "Safari.jpg" }));
-folder.add(new Folder({ title: Holiday Album }));
+var composite = new Composite({ title: "Pictures" });
+composite.add(new File({ title: "Safari.jpg" }));
+composite.add(new Composite({ title: Holiday Album }));
 
-model.add(folder);
+model.add(composite);
 ```
 
 ### Rendering
@@ -42,12 +42,12 @@ $("#list-container").html(view.render().el);
 
 ## API
 
-The following attributes can be `set` on folder and file models. 
+The following attributes can be `set` on list nodes.
 
-* `title`: File or folder name.
-* `onClick`: A function to be executed when an item is clicked. Passed the model of the clicked item as a paramter. 
-* `visible`: A boolean denoting whether to collapse or show the node. Only applicable to folders. Default is `true`.
-* `editable`: A boolean denoting whether the item can be edited. Default is `false`.
+* `title`: The nodes name.
+* `onClick`: A function to be executed when a node is clicked. Passed the model of the clicked item as a parameter.
+* `visible`: A boolean denoting whether to collapse or show the node. Only applicable to composites. Default is `true`.
+* `editable`: A boolean denoting whether the node can be edited. Default is `false`.
 
 ## Serializing For Storage
 
