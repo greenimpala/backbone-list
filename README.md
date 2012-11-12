@@ -76,14 +76,7 @@ The generated JSON is an array of top level items. Composite items may have a `c
 			"visible": true,
 			"title": "Music"
 		},
-		"children": [
-			{
-            		"model": "Leaf",
-            		"parameters": {
-            			"title": "Song.mp3"
-            		}
-            }
-		]
+		"children": []
 	}
 ]
 ```
