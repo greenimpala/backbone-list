@@ -1,16 +1,16 @@
 define([
-	"tree/model/File"
-], function (File) {
-	describe("tree/model/File", function () {
+	"list/model/Leaf"
+], function (Leaf) {
+	describe("list/model/Leaf", function () {
 
 		it("should instantiate", function () {
-			var model = new File();
+			var model = new Leaf();
 
 			chai.assert.isDefined(model);
 		});
 
 		it("sets a default icon property", function () {
-			var model = new File();
+			var model = new Leaf();
 
 			chai.assert.isString(model.get("icon"));
 		});

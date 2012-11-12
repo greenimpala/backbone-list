@@ -1,24 +1,24 @@
-Backbone-Tree
+Backbone-List
 ====================
 
-A lightweight tree component for Backbone.js apps.
+A lightweight list component for Backbone.js apps.
 
 * Easily extendable
 * Modular (require.js)
 * Namespaced CSS (less)
 * Unit tested
 
-<img src="https://raw.github.com/st3redstripe/Backbone-Tree/master/src/tree.png"/>
+<img src="https://raw.github.com/st3redstripe/Backbone-List/master/src/list.png"/>
 
 ## Usage
 
-Create a new `Tree` model and a `TreeView` view. 
+Create a new `List` model and a `ListView` view.
 
 When instantiating the view, pass the model as a parameter to bind it to the view. You can then begin adding nodes to the tree.
 
 ```js
-var model = new Tree();
-var view = new TreeView({ model: model });
+var model = new List();
+var view = new ListView({ model: model });
 ```
 
 ### Adding nodes
@@ -34,10 +34,10 @@ model.add(folder);
 ```
 
 ### Rendering
-You will only need to render the `TreeView` instance once. This will generate the views `el` so that you can insert it into the DOM.
+You will only need to render the `ListView` instance once. This will generate the views `el` so that you can insert it into the DOM.
 
 ```js
-$("#tree-container").html(view.render().el);
+$("#list-container").html(view.render().el);
 ```
 
 ## API
@@ -55,10 +55,10 @@ The following attributes can be `set` on folder and file models.
 
 ## Searching
 
-To make the tree searchable, add `search: true` to an `options` hash when instantiating the main view.
+To make the list searchable, add `search: true` to an `options` hash when instantiating the main view.
 
 ```js
-var view = new TreeView({
+var view = new ListView({
 	model: model,
 	options: {
 		search: true

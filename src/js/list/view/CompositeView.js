@@ -3,14 +3,14 @@ define([
 	"underscore",
 	"jquery",
 	"handlebars",
-	"tree/view/TreeItemView",
-	"tree/model/File",
-	"tree/model/Folder",
-	"tree/view/FileView",
-	"text!tree/templates/FolderView.html"
-], function (Backbone, _, $, Handlebars, TreeItemView, File, Folder, FileView, template) {
-	var FolderView = TreeItemView.extend({
-		className: "item folder",
+	"list/view/NodeView",
+	"list/model/Leaf",
+	"list/model/Composite",
+	"list/view/LeafView",
+	"text!list/templates/CompositeView.html"
+], function (Backbone, _, $, Handlebars, NodeView, Leaf, Composite, LeafView, template) {
+	var CompositeView = NodeView.extend({
+		className: "node composite",
 
 		tagName: "li",
 
@@ -28,8 +28,8 @@ define([
 		},
 
 		initialize: function () {
-			this.events = _.extend({}, TreeItemView.prototype.events, this.events);
-			TreeItemView.prototype.initialize.call(this);
+			this.events = _.extend({}, NodeView.prototype.events, this.events);
+			NodeView.prototype.initialize.call(this);
 
 			this.childViews = {};
 
@@ -51,7 +51,7 @@ define([
 		addChildViewForModel: function (model) {
 			this._createChildView(model);
 
-			if (model instanceof Folder) {
+			if (model instanceof Composite) {
 				// Manually trigger the 'add' event for any child models
 				model.get("children").each(function (child) {
 					model.get("children").trigger("add", child);
@@ -81,10 +81,10 @@ define([
 		_createChildView: function (model) {
 			var view;
 
-			if (model instanceof File) {
-				view = new FileView({ model: model });
-			} else if (model instanceof Folder) {
-				view = new FolderView({ model: model });
+			if (model instanceof Leaf) {
+				view = new LeafView({ model: model });
+			} else if (model instanceof Composite) {
+				view = new CompositeView({ model: model });
 			}
 			this.childViews[model.cid] = view;
 
@@ -112,5 +112,5 @@ define([
 		}
 	});
 
-	return FolderView;
+	return CompositeView;
 });

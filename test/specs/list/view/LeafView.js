@@ -1,22 +1,22 @@
 require([
 	"underscore",
 	"jquery",
-	"tree/view/FileView",
-	"tree/view/FolderView",
-	"tree/model/Tree",
-	"tree/model/File"
-], function (_, $, FileView, FolderView, Tree, File) {
-	describe("tree/view/FileView", function () {
+	"list/view/LeafView",
+	"list/view/CompositeView",
+	"list/model/List",
+	"list/model/Leaf"
+], function (_, $, LeafView, CompositeView, List, Leaf) {
+	describe("list/view/LeafView", function () {
 
 		it("instantiates with a model", function () {
-            var model = new File();
+            var model = new Leaf();
 
-			chai.assert.isDefined(new FileView({ model: model }));
+			chai.assert.isDefined(new LeafView({ model: model }));
 		});
 
 		it("hides title and shows editable form field when editing a post", function () {
-			var model = new File(),
-				view = new FileView({ model: model });
+			var model = new Leaf(),
+				view = new LeafView({ model: model });
 
 			view.render().edit($.Event());
 
@@ -25,8 +25,8 @@ require([
 		});
 
 		it("hides editable form field and shows title when cancelling an edit", function () {
-			var model = new File(),
-				view = new FileView({ model: model });
+			var model = new Leaf(),
+				view = new LeafView({ model: model });
 
 			view.render().edit($.Event());
 			view.cancelEdit($.Event());
@@ -36,8 +36,8 @@ require([
 		});
 
 		it("highlights the title from the supplied range", function () {
-			var model = new File({ title: "test-text" }),
-				view = new FileView({ model: model });
+			var model = new Leaf({ title: "test-text" }),
+				view = new LeafView({ model: model });
 
 			view.render().highlightTitle(5, 8);
 
@@ -45,8 +45,8 @@ require([
 		});
 
 		it("can clear highlighted text", function () {
-			var model = new File({ title: "test-text" }),
-				view = new FileView({ model: model });
+			var model = new Leaf({ title: "test-text" }),
+				view = new LeafView({ model: model });
 
 			view.render().highlightTitle(5, 8);
 			view.clearTitleHighlights();

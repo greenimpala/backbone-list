@@ -3,14 +3,14 @@ define([
 	"underscore",
 	"jquery",
 	"handlebars",
-	"tree/view/FolderView",
-	"text!tree/templates/_TreeItemView.html",
-	"text!tree/templates/Search.html"
-], function (Backbone, _, $, Handlebars, FolderView, _TreeItemView, Search) {
-	var TreeView = FolderView.extend({
+	"list/view/CompositeView",
+	"text!list/templates/_NodeView.html",
+	"text!list/templates/Search.html"
+], function (Backbone, _, $, Handlebars, CompositeView, _NodeView, Search) {
+	var ListView = CompositeView.extend({
 		tagName: "div",
 
-		className: "tree",
+		className: "list",
 
 		searchTemplate: Handlebars.compile(Search),
 
@@ -33,11 +33,11 @@ define([
 
 			this.registerPartials();
 
-			FolderView.prototype.initialize.call(this);
+			CompositeView.prototype.initialize.call(this);
 		},
 
 		registerPartials: function () {
-			Handlebars.registerPartial("TreeItemView", _TreeItemView);
+			Handlebars.registerPartial("NodeView", _NodeView);
 		},
 
 		clearResults: function () {
@@ -71,5 +71,5 @@ define([
 		}
 	});
 
-	return TreeView;
+	return ListView;
 });

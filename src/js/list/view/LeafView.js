@@ -3,11 +3,11 @@ define([
 	"underscore",
 	"jquery",
 	"handlebars",
-	"tree/view/TreeItemView",
-	"text!tree/templates/FileView.html"
-], function (Backbone, _, $, Handlebars, TreeItemView, template) {
-	var FileView = TreeItemView.extend({
-		className: "item file",
+	"list/view/NodeView",
+	"text!list/templates/LeafView.html"
+], function (Backbone, _, $, Handlebars, NodeView, template) {
+	var LeafView = NodeView.extend({
+		className: "node leaf",
 
         tagName: "li",
 
@@ -18,8 +18,8 @@ define([
 		},
 
 		initialize: function () {
-			this.events = _.extend({}, TreeItemView.prototype.events, this.events);
-			TreeItemView.prototype.initialize.call(this);
+			this.events = _.extend({}, NodeView.prototype.events, this.events);
+			NodeView.prototype.initialize.call(this);
 		},
 
 		render: function () {
@@ -31,5 +31,5 @@ define([
 		}
 	});
 
-	return FileView;
+	return LeafView;
 });

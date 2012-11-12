@@ -2,14 +2,14 @@ define([
 	"backbone",
 	"underscore",
 	"jquery",
-	"tree/model/Folder",
-	"tree/model/File"
-], function (Backbone, _, $, Folder, File) {
-	var Tree = Folder.extend({
+	"list/model/Composite",
+	"list/model/Leaf"
+], function (Backbone, _, $, Composite, Leaf) {
+	var List = Composite.extend({
 		_lastSearch: null,
 
 		initialize: function () {
-			Folder.prototype.initialize.call(this);
+			Composite.prototype.initialize.call(this);
 			this.set("visible", true);
 			this.on("all", this.dispatchEvent, this);
 		},
@@ -64,10 +64,10 @@ define([
 		_deserializeChild: function (child) {
 			var childModel;
 
-			if (child.model === "File") {
-				childModel = new File(child.parameters);
-			} else if (child.model === "Folder") {
-				childModel = new Folder(child.parameters);
+			if (child.model === Leaf.JSON_EXPORT) {
+				childModel = new Leaf(child.parameters);
+			} else if (child.model === Composite.JSON_EXPORT) {
+				childModel = new Composite(child.parameters);
 
 				if (child.children) {
 					childModel.add(this._deserializeChildren(child.children));
@@ -78,9 +78,9 @@ define([
 		},
 
 		toJSON: function () {
-			return Folder.prototype.toJSON.call(this).children;
+			return Composite.prototype.toJSON.call(this).children;
 		}
 	});
 
-	return Tree;
+	return List;
 });

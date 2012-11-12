@@ -2,16 +2,16 @@ define([
 	"backbone",
 	"underscore",
 	"jquery",
-	"tree/model/TreeItem"
-], function (Backbone, _, $, TreeItem) {
-	var Folder = TreeItem.extend({
+	"list/model/Node"
+], function (Backbone, _, $, Node) {
+	var Composite = Node.extend({
 		defaults: {
-			icon: "icon-folder",
+			icon: "icon-composite",
 			visible : false
 		},
 
 		initialize: function () {
-			TreeItem.prototype.initialize.call(this);
+			Node.prototype.initialize.call(this);
 			this.set("children", new Backbone.Collection());
 		},
 
@@ -48,7 +48,7 @@ define([
 			});
 
 			return {
-				model: "Folder",
+				model: this.JSON_EXPORT,
 				parameters: {
 					visible: this.get("visible"),
 					title: this.get("title")
@@ -56,7 +56,9 @@ define([
 				children: children
 			}
 		}
+	}, {
+		JSON_EXPORT: "Composite"
 	});
 
-	return Folder;
+	return Composite;
 });

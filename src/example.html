@@ -1,7 +1,7 @@
 <html>
 <head>
-	<title>Backbone-Tree</title>
-	<link rel="stylesheet" type="text/css" href="style/tree/tree.css">
+	<title>Backbone-List</title>
+	<link rel="stylesheet" type="text/css" href="style/list/list.css">
 	<script data-main="js/bootstrap" src="js/vendor/require/require.js"></script>
     <style>
         h1 {
@@ -13,18 +13,16 @@
     </style>
 </head>
 <body>
-<h1>Backbone-Tree</h1>
+<h1>Backbone-List</h1>
     <div id="container">
     </div>
 	<script type="text/javascript">
 		require([
-			"tree/model/Tree",
-            "tree/model/File",
-            "tree/model/Folder",
-            "tree/view/TreeView"
-		], function (Tree, File, Folder, TreeView) {
-            var model = new Tree();
-            var view = new TreeView({
+			"list/model/List",
+            "list/view/ListView"
+		], function (List, ListView) {
+            var model = new List();
+            var view = new ListView({
                 model: model,
                 options: {
                     search: true

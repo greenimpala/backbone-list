@@ -1,42 +1,42 @@
-.tree {
+.list {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   padding: 10px;
 }
-.tree .item .title-edit input {
+.list .node .title-edit input {
   border: 1px solid #8c8c8c;
   outline: none;
   padding: 2px;
 }
-.tree .item .title-edit span {
+.list .node .title-edit span {
   margin-left: 4px;
   margin-right: 4px;
   color: #8c8c8c;
 }
-.tree .item .highlight {
+.list .node .highlight {
   background-color: #ba0000;
   color: white;
 }
-.tree .file .icon-file {
-  background-image: url("img/file.gif");
+.list .leaf .icon-leaf {
+  background-image: url("img/leaf.gif");
 }
-.tree .file.editing {
+.list .leaf.editing {
   padding-top: 0px;
   padding-bottom: 0px;
 }
-.tree .folder .icon-folder {
-  background-image: url("img/folder-closed.gif");
+.list .composite .icon-composite {
+  background-image: url("img/composite-closed.gif");
 }
-.tree .folder .icon-folder.open {
-  background-image: url("img/folder-open.gif");
+.list .composite .icon-composite.open {
+  background-image: url("img/composite-open.gif");
 }
-.tree .folder .arrow {
+.list .composite .arrow {
   float: left;
   width: 15px;
   height: 15px;
   cursor: pointer;
 }
-.tree .folder .arrow .arrow-icon {
+.list .composite .arrow .arrow-icon {
   float: left;
   width: 0;
   height: 0;
@@ -46,7 +46,7 @@
   border-bottom: 5px solid transparent;
   border-left: 5px solid black;
 }
-.tree .folder .arrow .arrow-icon.open {
+.list .composite .arrow .arrow-icon.open {
   margin-top: 3px;
   margin-left: 0px;
   border-bottom: none;
@@ -54,46 +54,46 @@
   border-right: 5px solid transparent;
   border-top: 5px solid black;
 }
-.tree .hidden {
+.list .hidden {
   display: none !important;
 }
-.tree .highlight {
+.list .highlight {
   color: #1e90ff;
 }
-.tree .icon {
+.list .icon {
   float: left;
   width: 16px;
   height: 16px;
   background-repeat: no-repeat;
   margin-right: 5px;
 }
-.tree span.title {
+.list span.title {
   cursor: default;
 }
-.tree .strong {
+.list .strong {
   font-weight: bold;
 }
-.tree ul {
+.list ul {
   padding: 0px;
   margin: 0px;
   list-style: none;
 }
-.tree li {
+.list li {
   margin: 2px;
   padding: 4px;
   padding-left: 20px;
 }
-.tree #search input {
+.list #search input {
   border: 1px solid #696969;
   height: 20px;
   margin-bottom: 8px;
 }
-.tree #search #results {
+.list #search #results {
   display: inline-block;
 }
-.tree #search #results #clear-results {
+.list #search #results #clear-results {
   cursor: pointer;
 }
-.tree *:focus {
+.list *:focus {
   outline: none;
 }

@@ -1,10 +1,9 @@
 define([
 	"backbone",
 	"underscore",
-	"jquery",
-	"handlebars"
-], function (Backbone, _, $, Handlebars) {
-	var TreeItemView = Backbone.View.extend({
+	"jquery"
+], function (Backbone, _, $) {
+	var NodeView = Backbone.View.extend({
 		initialize: function () {
 			this.model.on("highlight", this.highlightTitle, this);
 			this.model.on("resetTitle", this.clearTitleHighlights, this)
@@ -75,5 +74,5 @@ define([
 		}
 	});
 
-	return TreeItemView;
+	return NodeView;
 });

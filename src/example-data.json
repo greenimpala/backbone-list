@@ -1,39 +1,39 @@
 [
 	{
-		"model": "Folder",
+		"model": "Composite",
 		"parameters": {
 			"visible": true,
 			"title": "Music"
 		},
 		"children": [
 			{
-				"model": "Folder",
+				"model": "Composite",
 				"parameters": {
 					"visible": false,
 					"title": "The Beatles"
 				},
 				"children": [
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Playlist.m3u"
 						}
 					},
 					{
-						"model": "Folder",
+						"model": "Composite",
 						"parameters": {
 							"visible": false,
 							"title": "Rubber Soul"
 						},
 						"children": [
 							{
-								"model": "File",
+								"model": "Leaf",
 								"parameters": {
 									"title": "Drive My Car"
 								}
 							},
 							{
-								"model": "File",
+								"model": "Leaf",
 								"parameters": {
 									"title": "Norwegian Wood"
 								}
@@ -41,26 +41,26 @@
 						]
 					},
 					{
-						"model": "Folder",
+						"model": "Composite",
 						"parameters": {
 							"visible": false,
 							"title": "The White Album"
 						},
 						"children": [
 							{
-								"model": "File",
+								"model": "Leaf",
 								"parameters": {
 									"title": "Back In The U.S.S.R"
 								}
 							},
 							{
-								"model": "File",
+								"model": "Leaf",
 								"parameters": {
 									"title": "Dear Prudence"
 								}
 							},
 							{
-								"model": "File",
+								"model": "Leaf",
 								"parameters": {
 									"title": "Glass Onion"
 								}
@@ -72,184 +72,184 @@
 		]
 	},
 	{
-		"model": "Folder",
+		"model": "Composite",
 		"parameters": {
 			"visible": true,
 			"title": "Sparks.jpeg"
 		},
 		"children": [
 			{
-				"model": "Folder",
+				"model": "Composite",
 				"parameters": {
 					"visible": true,
 					"title": "Wallpapers"
 				},
 				"children": [
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Meteor_Shower.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Cosmos.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Flying_Spaceman_25.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Alien_Spacecraft_2.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Space_4.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Moon.jpg"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Sun.jpg"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Astro_In_Space_22.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Time_And_Space.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Hubble_Space_Telescope.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Earth_From_Space.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Meteor_Shower.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Cosmos.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Flying_Spaceman_25.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Alien_Spacecraft_2.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Space_4.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Moon.jpg"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Sun.jpg"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Astro_In_Space_22.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Time_And_Space.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Hubble_Space_Telescope.png"
 						}
 					},
 					{
-						"model": "File",
+						"model": "Leaf",
 						"parameters": {
 							"title": "Earth_From_Space.png"
 						}
 					},
 					{
-						"model": "Folder",
+						"model": "Composite",
 						"parameters": {
 							"visible": true,
 							"title": "Misc"
 						},
 						"children": [
 							{
-								"model": "File",
+								"model": "Leaf",
 								"parameters": {
 									"title": "Blackhole_Spans.png"
 								}
 							},
 							{
-								"model": "File",
+								"model": "Leaf",
 								"parameters": {
 									"title": "Blackhole_Space_222.png"
 								}
 							},
 							{
-								"model": "File",
+								"model": "Leaf",
 								"parameters": {
 									"title": "Telescope.png"
 								}
 							},
 							{
-								"model": "File",
+								"model": "Leaf",
 								"parameters": {
 									"title": "Misc_Spacial.png"
 								}
 							},
 							{
-								"model": "File",
+								"model": "Leaf",
 								"parameters": {
 									"title": "Blackhole_Space_66.png"
 								}
@@ -259,7 +259,7 @@
 				]
 			},
 			{
-				"model": "File",
+				"model": "Leaf",
 				"parameters": {
 					"title": "Example.jpeg"
 				}
