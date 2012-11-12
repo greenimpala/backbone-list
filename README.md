@@ -51,7 +51,43 @@ The following attributes can be `set` on list nodes.
 
 ## Serializing For Storage
 
-`throw new NotDocumentedException()`
+You can call `toJSON()` on any model to generate a JSON representation. In turn with the `List` model's `deserialize()` method you can save the lists state to repopulate an instance in the future.
+
+```js
+var model = new List();
+var view = new ListView({
+	model: model
+});
+
+// Fetch some data over XHR and populate the list
+$.getJSON("example-data.json", function (data) {
+	model.deserialize(data);
+	$("#container").append(view.render().el);
+});
+```
+
+The generated JSON is an array of top level items. Composite items may have a `children` property which is an array of nodes.
+
+```json
+[
+	{
+		"model": "Composite",
+		"parameters": {
+			"visible": true,
+			"title": "Music"
+		},
+		"children": [
+			{
+            		"model": "Leaf",
+            		"parameters": {
+            			"title": "Song.mp3"
+            		}
+            }
+		]
+	}
+]
+```
+
 
 ## Searching
 
