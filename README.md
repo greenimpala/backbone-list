@@ -1,11 +1,12 @@
 Backbone-List
 ====================
 
-A lightweight, composite list component for Backbone.js apps.
+A lightweight, themeable list component for Backbone.js apps.
 
 * Easily extendable
-* Modular (require.js)
-* Namespaced CSS (less)
+* Themeable
+* LESS styles
+* Modular (Require.js)
 * Unit tested
 
 <img src="https://raw.github.com/st3redstripe/Backbone-List/master/src/list.png"/>
