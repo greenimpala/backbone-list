@@ -23,11 +23,11 @@ define([
 			"keyup #search input"   : "onSearchKeypress"
 		},
 
-		initialize: function (args) {
+		initialize: function () {
 			_.bindAll(this, "onSearchKeypress", "clearResults");
 			this.model.on("search", this.updateTicker, this);
 
-			if (args.options && args.options.search) {
+			if (this.options.search) {
 				this._initializeSearch();
 			}
 

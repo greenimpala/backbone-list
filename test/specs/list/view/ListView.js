@@ -18,7 +18,7 @@ define([
 
 			var view = new ListView({
 				model: model,
-				options: { search: true }
+				search: true
 			}).render();
 
 			var spy = sinon.spy(model, "search");
@@ -35,7 +35,7 @@ define([
 
 			var view = new ListView({
 				model: model,
-				options: { search: true }
+				search: true
 			}).render();
 
 			view.$el.find("#search input").val("test").keyup();
@@ -47,7 +47,7 @@ define([
 			var model = new List();
 			var view = new ListView({
 				model: model,
-				options: { search: true }
+				search: true
 			}).render();
 
 			view.$el.find("#search input").val("testVal");

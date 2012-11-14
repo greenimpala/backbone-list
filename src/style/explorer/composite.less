@@ -9,25 +9,29 @@
 
   .expander {
     cursor: pointer;
+    float: left;
+    width: 16px;
 
     .expander-icon {
+      margin-top: 4px;
       width: 0;
       height: 0;
 
-      margin-top: 1px;
-      margin-left: 3px;
       border-top: 5px solid transparent;
       border-bottom: 5px solid transparent;
       border-left: 5px solid black;
 
       &.open {
-        margin-top: 3px;
-        margin-left: 0px;
+        margin-top: 6px;
         border-bottom: none;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
         border-top: 5px solid black;
       }
     }
+  }
+
+  .composite-content {
+
   }
 }

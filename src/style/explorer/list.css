@@ -35,19 +35,19 @@
 }
 .list .composite .expander {
   cursor: pointer;
+  float: left;
+  width: 16px;
 }
 .list .composite .expander .expander-icon {
+  margin-top: 4px;
   width: 0;
   height: 0;
-  margin-top: 1px;
-  margin-left: 3px;
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
   border-left: 5px solid black;
 }
 .list .composite .expander .expander-icon.open {
-  margin-top: 3px;
-  margin-left: 0px;
+  margin-top: 6px;
   border-bottom: none;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
@@ -75,7 +75,8 @@
   width: 16px;
   height: 16px;
   background-repeat: no-repeat;
-  margin-right: 5px;
+  margin-right: 4px;
+  margin-top: 2px;
 }
 .list .strong {
   font-weight: bold;
@@ -86,9 +87,10 @@
   list-style: none;
 }
 .list li {
-  margin: 2px;
-  padding: 4px;
+  margin-top: 4px;
+  padding: 0px;
   padding-left: 20px;
+  line-height: 22px;
 }
 .list *:focus {
   outline: none;

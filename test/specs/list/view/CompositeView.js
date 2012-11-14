@@ -110,5 +110,17 @@ define([
 
 			chai.assert.equal(view.$el.find("ul:first li").length, 3);
 		});
+
+		it("passes down animate option when creating child views", function () {
+			var folder = new Composite();
+			var view = new CompositeView({ model: folder, animate: true });
+
+			folder.add(new Leaf());
+
+			var childView = _.toArray(view.childViews)[0];
+
+			chai.assert.isDefined(childView.options.animate);
+			chai.assert.isTrue(childView.options.animate);
+		});
 	});
 });

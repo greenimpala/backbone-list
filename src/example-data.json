@@ -74,32 +74,20 @@
 	{
 		"model": "Composite",
 		"parameters": {
-			"visible": false,
+			"visible": true,
 			"title": "Images"
 		},
 		"children": [
 			{
 				"model": "Composite",
 				"parameters": {
-					"visible": false,
+					"visible": true,
 					"title": "Wallpapers"
 				},
 				"children": [
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Meteor_Shower.png"
-						}
-					},
-					{
-						"model": "Leaf",
-						"parameters": {
-							"title": "Cosmos.png"
-						}
-					},
-					{
-						"model": "Leaf",
-						"parameters": {
 							"title": "Flying_Spaceman_25.png"
 						}
 					},
@@ -113,18 +101,6 @@
 						"model": "Leaf",
 						"parameters": {
 							"title": "Space_4.png"
-						}
-					},
-					{
-						"model": "Leaf",
-						"parameters": {
-							"title": "Moon.jpg"
-						}
-					},
-					{
-						"model": "Leaf",
-						"parameters": {
-							"title": "Sun.jpg"
 						}
 					},
 					{
@@ -154,18 +130,6 @@
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Meteor_Shower.png"
-						}
-					},
-					{
-						"model": "Leaf",
-						"parameters": {
-							"title": "Cosmos.png"
-						}
-					},
-					{
-						"model": "Leaf",
-						"parameters": {
 							"title": "Flying_Spaceman_25.png"
 						}
 					},
@@ -184,18 +148,6 @@
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Moon.jpg"
-						}
-					},
-					{
-						"model": "Leaf",
-						"parameters": {
-							"title": "Sun.jpg"
-						}
-					},
-					{
-						"model": "Leaf",
-						"parameters": {
 							"title": "Astro_In_Space_22.png"
 						}
 					},
@@ -203,24 +155,12 @@
 						"model": "Leaf",
 						"parameters": {
 							"title": "Time_And_Space.png"
-						}
-					},
-					{
-						"model": "Leaf",
-						"parameters": {
-							"title": "Hubble_Space_Telescope.png"
-						}
-					},
-					{
-						"model": "Leaf",
-						"parameters": {
-							"title": "Earth_From_Space.png"
 						}
 					},
 					{
 						"model": "Composite",
 						"parameters": {
-							"visible": true,
+							"visible": false,
 							"title": "Misc"
 						},
 						"children": [

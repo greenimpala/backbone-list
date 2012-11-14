@@ -23,8 +23,8 @@ define([
 		_$children: null,
 
 		events: {
-			"click .expander"      : "showHideChildren",
-			"click .icon"    : "showHideChildren"
+			"click .expander"   :   "showHideChildren",
+			"click .icon"       :   "showHideChildren"
 		},
 
 		initialize: function () {
@@ -64,11 +64,17 @@ define([
 		},
 
 		onVisibilityChange: function () {
+			var ul = this.$el.find("ul:first");
+
 			this.$el
 				.find("span.expander-icon:first, span.composite-icon:first")
 				.toggleClass("open", this.model.get("visible"));
 
-			this.$el.find("ul:first").toggleClass("hidden");
+			if (this.options.animate) {
+				ul.slideToggle("fast");
+			} else {
+				ul.toggleClass("hidden");
+			}
 		},
 
 		showHideChildren: function (e) {
@@ -80,11 +86,14 @@ define([
 
 		_createChildView: function (model) {
 			var view;
+			var properties = _.extend({ model: model }, {
+				animate: this.options.animate
+			});
 
 			if (model instanceof Leaf) {
-				view = new LeafView({ model: model });
+				view = new LeafView(properties);
 			} else if (model instanceof Composite) {
-				view = new CompositeView({ model: model });
+				view = new CompositeView(properties);
 			}
 			this.childViews[model.cid] = view;
 
