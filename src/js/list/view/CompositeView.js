@@ -73,7 +73,7 @@ define([
 			if (this.options.animate) {
 				ul.slideToggle("fast");
 			} else {
-				ul.toggleClass("hidden");
+				ul.toggle();
 			}
 		},
 
@@ -111,7 +111,7 @@ define([
 		},
 
 		_renderChildren: function () {
-			var ul = $(this.make("ul")).toggleClass("hidden", !this.model.get("visible"));
+			var ul = $(this.make("ul")).toggle(this.model.get("visible"));
 
 			_.each(this.childViews, function (child) {
 				ul.append(child.render().el);

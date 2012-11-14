@@ -2,14 +2,14 @@
 	{
 		"model": "Composite",
 		"parameters": {
-			"visible": true,
+			"visible": false,
 			"title": "Music"
 		},
 		"children": [
 			{
 				"model": "Composite",
 				"parameters": {
-					"visible": true,
+					"visible": false,
 					"title": "The Beatles"
 				},
 				"children": [

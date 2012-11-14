@@ -2,6 +2,7 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   padding: 10px;
+  width: 280px;
 }
 .list .node .title-edit input {
   border: 1px solid #8c8c8c;
@@ -53,13 +54,19 @@
   border-right: 5px solid transparent;
   border-top: 5px solid black;
 }
+.list .composite .composite-content .title {
+  font-weight: bold;
+}
 .list #search input {
   border: 1px solid #696969;
   height: 20px;
-  margin-bottom: 8px;
+  width: 160px;
+  margin-bottom: 10px;
+  margin-right: 6px;
 }
 .list #search #results {
   display: inline-block;
+  margin-bottom: 10px;
 }
 .list #search #results #clear-results {
   cursor: pointer;
