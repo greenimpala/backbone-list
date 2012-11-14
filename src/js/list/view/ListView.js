@@ -54,6 +54,8 @@ define([
 			var query = $.trim(this._$searchField.val());
 
 			this.model.search(query);
+
+			this._$searchResults.toggle(query.length > 0);
 		},
 
 		updateTicker: function (results) {

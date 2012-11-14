@@ -56,5 +56,18 @@ define([
 			view.$el.find("#search #clear-results").click();
 			chai.assert.equal("", view.$el.find("#search input").val());
 		});
+
+		it("hides ticker when search field empty", function () {
+			var model = new List();
+			var view = new ListView({
+				model: model,
+				search: true
+			}).render();
+
+			view.$el.find("#search input").val("testVal").keyup();
+			chai.assert.notEqual("none", view.$el.find("#search #results").css("display"));
+			view.$el.find("#search input").val("").keyup();
+			chai.assert.equal("none", view.$el.find("#search #results").css("display"));
+		});
 	});
 });
