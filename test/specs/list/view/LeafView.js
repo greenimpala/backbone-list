@@ -20,8 +20,8 @@ require([
 
 			view.render().edit($.Event());
 
-			chai.assert.isTrue(view.$el.find(".title").hasClass("hidden"));
-			chai.assert.isFalse(view.$el.find(".title-edit").hasClass("hidden"));
+			chai.assert.isTrue(view.$el.find(".title").is(":hidden"));
+			chai.assert.notEqual("none", view.$el.find(".title-edit").css("display"));
 		});
 
 		it("hides editable form field and shows title when cancelling an edit", function () {
@@ -31,8 +31,8 @@ require([
 			view.render().edit($.Event());
 			view.cancelEdit($.Event());
 
-			chai.assert.isFalse(view.$el.find(".title").hasClass("hidden"));
-			chai.assert.isTrue(view.$el.find(".title-edit").hasClass("hidden"));
+			chai.assert.isTrue(view.$el.find(".title-edit").is(":hidden"));
+			chai.assert.notEqual("none", view.$el.find(".title").css("display"));
 		});
 
 		it("highlights the title from the supplied range", function () {

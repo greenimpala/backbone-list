@@ -58,7 +58,6 @@ define([
 
 		updateTicker: function (results) {
 			this._$searchResults
-				.toggleClass("hidden", results.length === 0)
 				.find("strong")
 				.html(results.length);
 		},

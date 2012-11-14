@@ -19,20 +19,24 @@ define([
 		edit: function (e) {
 			e.stopImmediatePropagation();
 
-			this.$el.find(".title:first").addClass("hidden");
+			this.$el.find(".title:first").hide();
 			this.$el.addClass("editing");
 
-			this.$el.find(".title-edit:first").removeClass("hidden")
+			this.$el
+				.find(".title-edit:first")
+				.show()
 				.find("input").focus();
 		},
 
 		cancelEdit: function (e) {
 			e.stopImmediatePropagation();
 
-			this.$el.find(".title-edit:first").addClass("hidden")
-				.find("input").val(this.model.get("title"));
+			this.$el.find(".title-edit:first")
+				.hide()
+				.find("input")
+				.val(this.model.get("title"));
 
-			this.$el.find(".title:first").removeClass("hidden");
+			this.$el.find(".title:first").show();
 			this.$el.removeClass("editing");
 		},
 

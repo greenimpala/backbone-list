@@ -503,9 +503,6 @@
 .list #search #results #clear-results {
   cursor: pointer;
 }
-.list .hidden {
-  display: none !important;
-}
 .list .highlight {
   color: #1e90ff;
 }
