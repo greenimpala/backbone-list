@@ -23,8 +23,8 @@ define([
 		_$children: null,
 
 		events: {
-			"click .expander"   :   "showHideChildren",
-			"click .icon"       :   "showHideChildren"
+			"click .composite-content .expander" :   "showHideChildren",
+			"click .composite-content .icon"     :   "showHideChildren"
 		},
 
 		initialize: function () {
