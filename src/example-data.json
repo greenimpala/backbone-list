@@ -2,21 +2,29 @@
 	{
 		"model": "Composite",
 		"parameters": {
-			"visible": false,
+			"visible": true,
 			"title": "Music"
 		},
 		"children": [
 			{
 				"model": "Composite",
 				"parameters": {
-					"visible": false,
+					"visible": true,
 					"title": "The Beatles"
 				},
 				"children": [
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Playlist.m3u"
+							"title": "Lyrics",
+							"icon": "icon-file"
+						}
+					},
+					{
+						"model": "Leaf",
+						"parameters": {
+							"title": "Video_Documentary",
+							"icon": "icon-film"
 						}
 					},
 					{
@@ -29,13 +37,15 @@
 							{
 								"model": "Leaf",
 								"parameters": {
-									"title": "Drive My Car"
+									"title": "Drive My Car",
+									"icon": "icon-music"
 								}
 							},
 							{
 								"model": "Leaf",
 								"parameters": {
-									"title": "Norwegian Wood"
+									"title": "Norwegian Wood",
+									"icon": "icon-music"
 								}
 							}
 						]
@@ -50,19 +60,22 @@
 							{
 								"model": "Leaf",
 								"parameters": {
-									"title": "Back In The U.S.S.R"
+									"title": "Back In The U.S.S.R",
+									"icon": "icon-music"
 								}
 							},
 							{
 								"model": "Leaf",
 								"parameters": {
-									"title": "Dear Prudence"
+									"title": "Dear Prudence",
+									"icon": "icon-music"
 								}
 							},
 							{
 								"model": "Leaf",
 								"parameters": {
-									"title": "Glass Onion"
+									"title": "Glass Onion",
+									"icon": "icon-music"
 								}
 							}
 						]
@@ -88,73 +101,85 @@
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Flying_Spaceman_25.png"
+							"title": "Flying_Spaceman_25.png",
+							"icon": "icon-picture"
 						}
 					},
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Alien_Spacecraft_2.png"
+							"title": "Alien_Spacecraft_2.png",
+							"icon": "icon-picture"
 						}
 					},
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Space_4.png"
+							"title": "Space_4.png",
+							"icon": "icon-picture"
 						}
 					},
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Astro_In_Space_22.png"
+							"title": "Astro_In_Space_22.png",
+							"icon": "icon-picture"
 						}
 					},
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Time_And_Space.png"
+							"title": "Time_And_Space.png",
+							"icon": "icon-picture"
 						}
 					},
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Hubble_Space_Telescope.png"
+							"title": "Hubble_Space_Telescope.png",
+							"icon": "icon-picture"
 						}
 					},
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Earth_From_Space.png"
+							"title": "Earth_From_Space.png",
+							"icon": "icon-picture"
 						}
 					},
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Flying_Spaceman_25.png"
+							"title": "Flying_Spaceman_25.png",
+							"icon": "icon-picture"
 						}
 					},
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Alien_Spacecraft_2.png"
+							"title": "Alien_Spacecraft_2.png",
+							"icon": "icon-picture"
 						}
 					},
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Space_4.png"
+							"title": "Space_4.png",
+							"icon": "icon-picture"
 						}
 					},
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Astro_In_Space_22.png"
+							"title": "Astro_In_Space_22.png",
+							"icon": "icon-picture"
 						}
 					},
 					{
 						"model": "Leaf",
 						"parameters": {
-							"title": "Time_And_Space.png"
+							"title": "Time_And_Space.png",
+							"icon": "icon-picture"
 						}
 					},
 					{
@@ -167,31 +192,36 @@
 							{
 								"model": "Leaf",
 								"parameters": {
-									"title": "Blackhole_Spans.png"
+									"title": "Blackhole_Spans.png",
+									"icon": "icon-picture"
 								}
 							},
 							{
 								"model": "Leaf",
 								"parameters": {
-									"title": "Blackhole_Space_222.png"
+									"title": "Blackhole_Space_222.png",
+									"icon": "icon-picture"
 								}
 							},
 							{
 								"model": "Leaf",
 								"parameters": {
-									"title": "Telescope.png"
+									"title": "Telescope.png",
+									"icon": "icon-picture"
 								}
 							},
 							{
 								"model": "Leaf",
 								"parameters": {
-									"title": "Misc_Spacial.png"
+									"title": "Misc_Spacial.png",
+									"icon": "icon-picture"
 								}
 							},
 							{
 								"model": "Leaf",
 								"parameters": {
-									"title": "Blackhole_Space_66.png"
+									"title": "Blackhole_Space_66.png",
+									"icon": "icon-picture"
 								}
 							}
 						]
@@ -201,7 +231,8 @@
 			{
 				"model": "Leaf",
 				"parameters": {
-					"title": "Example.jpeg"
+					"title": "Example.jpeg",
+					"icon": "icon-picture"
 				}
 			}
 		]

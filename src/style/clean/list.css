@@ -2,7 +2,7 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   padding: 10px;
-  width: 280px;
+  width: 240px;
   color: #4b4b4b;
 }
 .list .glyphicon {
@@ -451,14 +451,14 @@
   border-bottom: 1px solid #dddddd;
 }
 .list .leaf .leaf-icon {
-  display: none;
+  background-image: url("../glyphicons/../glyphicons/../glyphicons/../glyphicons/glyphicons-halflings.png");
 }
 .list .leaf.editing {
   padding-top: 0px;
   padding-bottom: 0px;
 }
 .list .leaf .leaf-content {
-  background: #f5f5f5;
+  background: #f2f2f2;
   padding-left: 12px;
 }
 .list .composite .composite-icon {

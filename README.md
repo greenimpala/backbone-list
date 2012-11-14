@@ -8,7 +8,8 @@ A lightweight, composite list component for Backbone.js apps.
 * Namespaced CSS (less)
 * Unit tested
 
-<img src="https://raw.github.com/st3redstripe/Backbone-List/master/src/list.png"/>
+<img src="https://raw.github.com/st3redstripe/Backbone-List/master/src/clean.png"/>
+<img src="https://raw.github.com/st3redstripe/Backbone-List/master/src/explorer.png"/>
 
 ## Usage
 
