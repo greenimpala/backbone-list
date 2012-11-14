@@ -46,12 +46,12 @@ The following attributes can be `set` on list nodes.
 
 * `title`: The nodes name.
 * `onClick`: A function to be executed when a node is clicked. Passed the model of the clicked item as a parameter.
-* `visible`: A boolean denoting whether to collapse or show the node. Only applicable to composites. Default is `true`.
+* `visible`: A boolean denoting whether to collapse or show the node. Only applicable to composites. Default is `false`.
 * `editable`: A boolean denoting whether the node can be edited. Default is `false`.
 
 ## Serializing For Storage
 
-You can call `toJSON()` on any model to generate a JSON representation. In turn with the `List` model's `deserialize()` method you can save the lists state to repopulate an instance in the future.
+You can call `toJSON()` on any model to generate a JSON representation. In turn with the `List` model's `deserialize()` method you can save the lists state and reconstruct an instance in the future.
 
 ```js
 var model = new List();
@@ -66,7 +66,7 @@ $.getJSON("example-data.json", function (data) {
 });
 ```
 
-The generated JSON is an array of top level items. Composite items may have a `children` property which is an array of nodes.
+The generated JSON is an array of top level nodes. Composite items may have a `children` property which should contain an array of nodes.
 
 ```json
 [
@@ -82,16 +82,18 @@ The generated JSON is an array of top level items. Composite items may have a `c
 ```
 
 
-## Searching
+## Options
 
-To make the list searchable, add `search: true` to an `options` hash when instantiating the main view.
+You may pass the following properties when instantiating the main list view.
+
+* `search`: Boolean denoting whether to display a search field. Default is `false`.
+* `animate`: Boolean denoting whether use animations when expanding and collapsing. Default is `false`.
 
 ```js
 var view = new ListView({
 	model: model,
-	options: {
-		search: true
-	}
+	search: true,
+	animate: true
 });
 ```
 
