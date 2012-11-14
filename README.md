@@ -52,14 +52,15 @@ You will only need to render the `ListView` instance once. This will generate th
 $("#list-container").html(view.render().el);
 ```
 
-## API
+## Model Attributes
 
-The following attributes can be `set` on list nodes.
+The following attributes can be `set` on models.
 
 * `title`: The nodes name.
 * `onClick`: A function to be executed when a node is clicked. Passed the model of the clicked item as a parameter.
 * `visible`: A boolean denoting whether to collapse or show the node. Only applicable to composites. Default is `false`.
 * `editable`: A boolean denoting whether the node can be edited. Default is `false`.
+* `icon`: A string representing a Glyphicon icon class.
 
 ## Serializing For Storage
 
@@ -93,7 +94,6 @@ The generated JSON is an array of top level nodes. Composite items may have a `c
 ]
 ```
 
-
 ## Options
 
 You may pass the following properties when instantiating the main list view.
@@ -108,6 +108,10 @@ var view = new ListView({
 	animate: true
 });
 ```
+
+## Themeing
+
+Themes are written in LESS and can be compiled to CSS. The `src/style` directory lists the default themes. Create a new theme by duplicating one of these directories and modify the LESS files accordingly.
 
 ## Tests
 
