@@ -5,6 +5,8 @@ A lightweight, themeable list component for Backbone.js apps.
 
 * Easily extendable
 * Themeable
+* Searchable
+* Built in Glyphicons
 * LESS styles
 * Modular (Require.js)
 * Unit tested
