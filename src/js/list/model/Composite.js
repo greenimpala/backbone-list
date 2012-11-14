@@ -6,7 +6,7 @@ define([
 ], function (Backbone, _, $, Node) {
 	var Composite = Node.extend({
 		defaults: {
-			icon: "icon-composite",
+			icon: "composite-icon",
 			visible : false
 		},
 

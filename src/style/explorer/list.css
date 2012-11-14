@@ -17,27 +17,26 @@
   background-color: #ba0000;
   color: white;
 }
-.list .leaf .icon-leaf {
-  background-image: url("img/leaf.gif");
+.list .node span.title {
+  cursor: default;
+}
+.list .leaf .leaf-icon {
+  background-image: url("img/file.gif");
 }
 .list .leaf.editing {
   padding-top: 0px;
   padding-bottom: 0px;
 }
-.list .composite .icon-composite {
-  background-image: url("img/composite-closed.gif");
+.list .composite .composite-icon {
+  background-image: url("img/folder-closed.gif");
 }
-.list .composite .icon-composite.open {
-  background-image: url("img/composite-open.gif");
+.list .composite .composite-icon.open {
+  background-image: url("img/folder-open.gif");
 }
-.list .composite .arrow {
-  float: left;
-  width: 15px;
-  height: 15px;
+.list .composite .expander {
   cursor: pointer;
 }
-.list .composite .arrow .arrow-icon {
-  float: left;
+.list .composite .expander .expander-icon {
   width: 0;
   height: 0;
   margin-top: 1px;
@@ -46,13 +45,24 @@
   border-bottom: 5px solid transparent;
   border-left: 5px solid black;
 }
-.list .composite .arrow .arrow-icon.open {
+.list .composite .expander .expander-icon.open {
   margin-top: 3px;
   margin-left: 0px;
   border-bottom: none;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid black;
+}
+.list #search input {
+  border: 1px solid #696969;
+  height: 20px;
+  margin-bottom: 8px;
+}
+.list #search #results {
+  display: inline-block;
+}
+.list #search #results #clear-results {
+  cursor: pointer;
 }
 .list .hidden {
   display: none !important;
@@ -67,9 +77,6 @@
   background-repeat: no-repeat;
   margin-right: 5px;
 }
-.list span.title {
-  cursor: default;
-}
 .list .strong {
   font-weight: bold;
 }
@@ -82,17 +89,6 @@
   margin: 2px;
   padding: 4px;
   padding-left: 20px;
-}
-.list #search input {
-  border: 1px solid #696969;
-  height: 20px;
-  margin-bottom: 8px;
-}
-.list #search #results {
-  display: inline-block;
-}
-.list #search #results #clear-results {
-  cursor: pointer;
 }
 .list *:focus {
   outline: none;

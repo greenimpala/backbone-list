@@ -9,7 +9,7 @@
 			{
 				"model": "Composite",
 				"parameters": {
-					"visible": false,
+					"visible": true,
 					"title": "The Beatles"
 				},
 				"children": [
@@ -22,7 +22,7 @@
 					{
 						"model": "Composite",
 						"parameters": {
-							"visible": false,
+							"visible": true,
 							"title": "Rubber Soul"
 						},
 						"children": [
@@ -74,14 +74,14 @@
 	{
 		"model": "Composite",
 		"parameters": {
-			"visible": true,
-			"title": "Sparks.jpeg"
+			"visible": false,
+			"title": "Images"
 		},
 		"children": [
 			{
 				"model": "Composite",
 				"parameters": {
-					"visible": true,
+					"visible": false,
 					"title": "Wallpapers"
 				},
 				"children": [

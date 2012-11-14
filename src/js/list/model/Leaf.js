@@ -6,7 +6,7 @@ define([
 ], function (Backbone, _, $, Node) {
 	var Leaf = Node.extend({
 		defaults: {
-			"icon": "icon-leaf"
+			"icon": "leaf-icon"
 		},
 
 		initialize: function () {

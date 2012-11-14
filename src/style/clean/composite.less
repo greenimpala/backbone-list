@@ -1,0 +1,31 @@
+.composite {
+  .composite-icon {
+    display: none;
+    &.open {
+    }
+  }
+
+  .expander {
+    cursor: pointer;
+
+    .expander-icon {
+      .glyphicon;
+      .icon-plus-sign;
+
+      &.open {
+        .icon-minus-sign;
+      }
+    }
+  }
+}
+
+li.composite {
+  background: #ededed;
+  background: -moz-linear-gradient(top,  #ededed 0%, #e1e1e1 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#e1e1e1));
+  background: -webkit-linear-gradient(top,  #ededed 0%,#e1e1e1 100%);
+  background: -o-linear-gradient(top,  #ededed 0%,#e1e1e1 100%);
+  background: -ms-linear-gradient(top,  #ededed 0%,#e1e1e1 100%);
+  background: linear-gradient(to bottom,  #ededed 0%,#e1e1e1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#e1e1e1',GradientType=0 );
+}

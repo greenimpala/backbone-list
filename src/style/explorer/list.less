@@ -2,6 +2,7 @@
   @import "node.less";
   @import "leaf.less";
   @import "composite.less";
+  @import "search.less";
 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
@@ -23,10 +24,6 @@
     margin-right: 5px;
   }
 
-  span.title {
-    cursor: default
-  }
-
   .strong {
     font-weight: bold;
   }
@@ -41,22 +38,6 @@
     margin: 2px;
     padding: 4px;
     padding-left: 20px;
-  }
-
-  #search {
-    input {
-      border: 1px solid #696969;
-      height: 20px;
-      margin-bottom: 8px;
-    }
-
-    #results {
-      display: inline-block;
-
-      #clear-results {
-        cursor: pointer;
-      }
-    }
   }
 
   *:focus {

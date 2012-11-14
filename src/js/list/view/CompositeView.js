@@ -23,8 +23,8 @@ define([
 		_$children: null,
 
 		events: {
-			"click .arrow"      : "showHideChildren",
-			"dblclick .icon"    : "showHideChildren"
+			"click .expander"      : "showHideChildren",
+			"click .icon"    : "showHideChildren"
 		},
 
 		initialize: function () {
@@ -65,7 +65,7 @@ define([
 
 		onVisibilityChange: function () {
 			this.$el
-				.find("span.arrow-icon:first, span.icon:first")
+				.find("span.expander-icon:first, span.composite-icon:first")
 				.toggleClass("open", this.model.get("visible"));
 
 			this.$el.find("ul:first").toggleClass("hidden");

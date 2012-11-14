@@ -1,0 +1,51 @@
+.list {
+  @import "../glyphicons/icons.less";
+  @import "node.less";
+  @import "leaf.less";
+  @import "composite.less";
+  @import "search.less";
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  padding: 10px;
+  width: 280px;
+  color: #4b4b4b;
+
+  .hidden {
+    display: none !important;
+  }
+
+  .highlight {
+    color: #1e90ff;
+  }
+
+  .icon {
+    float: left;
+    width: 16px;
+    height: 16px;
+    background-repeat: no-repeat;
+    margin: 8px;
+    margin-top: 14px;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+
+  ul {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+  }
+
+  li {
+    line-height: 44px;
+    border-top: 1px solid #cbcbcb;
+    background: #f9f9f9;
+    padding-left: 6px;
+  }
+
+  *:focus {
+    outline: none;
+  }
+}
