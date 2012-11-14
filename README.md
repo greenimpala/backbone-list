@@ -9,8 +9,16 @@ A lightweight, themeable list component for Backbone.js apps.
 * Modular (Require.js)
 * Unit tested
 
-<img src="https://raw.github.com/st3redstripe/Backbone-List/master/src/clean.png"/>
-<img src="https://raw.github.com/st3redstripe/Backbone-List/master/src/explorer.png"/>
+<table>
+<tr>
+<td><img height="70%" src="https://raw.github.com/st3redstripe/Backbone-List/master/src/clean.png"/></td>
+<td><img src="https://raw.github.com/st3redstripe/Backbone-List/master/src/explorer.png"/></td>
+</tr>
+<tr>
+<td><em><strong>Clean</strong> theme with Glyphicons</em></td>
+<td><em><strong>Explorer</strong> theme with search enabled</em></td>
+</tr>
+</table>
 
 ## Usage
 
