@@ -4,6 +4,9 @@
   padding: 10px;
   width: 280px;
 }
+.list > ul > li {
+  padding-left: 0;
+}
 .list .node .title-edit input {
   border: 1px solid #8c8c8c;
   outline: none;
