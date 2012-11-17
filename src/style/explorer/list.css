@@ -85,16 +85,19 @@
 .list .strong {
   font-weight: bold;
 }
-.list ul {
+.list ul,
+.list li {
   padding: 0px;
   margin: 0px;
   list-style: none;
 }
 .list li {
   margin-top: 4px;
-  padding: 0px;
   padding-left: 20px;
   line-height: 22px;
+}
+.list > ul > li {
+  padding-left: 0;
 }
 .list *:focus {
   outline: none;

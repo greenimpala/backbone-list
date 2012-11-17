@@ -19,6 +19,10 @@ define([
 		edit: function (e) {
 			e.stopImmediatePropagation();
 
+			if (this.model.get("editable") !== true) {
+				return;
+			}
+
 			this.$el.find(".title:first").hide();
 			this.$el.addClass("editing");
 

@@ -38,7 +38,7 @@ define([
 			this.model.on("change:visible", this.onVisibilityChange, this);
 
 			this._$header = $(this.make("div")).appendTo(this.el);
-			this._$children = $(this.make("div")).appendTo(this.el);
+			this._$children = $(this.make("ul")).appendTo(this.el);
 		},
 
 		render: function () {
@@ -111,13 +111,15 @@ define([
 		},
 
 		_renderChildren: function () {
-			var ul = $(this.make("ul")).toggle(this.model.get("visible"));
+			var fragment = document.createDocumentFragment();
 
 			_.each(this.childViews, function (child) {
-				ul.append(child.render().el);
+				fragment.appendChild(child.render().el);
 			}, this);
 
-			this._$children.html(ul);
+			this._$children
+				.toggle(this.model.get("visible"))
+				.html(fragment);
 		}
 	});
 

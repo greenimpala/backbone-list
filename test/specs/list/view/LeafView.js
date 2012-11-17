@@ -14,8 +14,21 @@ require([
 			chai.assert.isDefined(new LeafView({ model: model }));
 		});
 
+		it("only enter edit mode if models editable property is true", function () {
+			var model = new Leaf();
+			var view = new LeafView({ model: model });
+
+			view.render().edit($.Event());
+			chai.assert.notEqual("none", view.$el.find(".title").css("display"));
+
+			model.set("editable", true);
+
+			view.render().edit($.Event());
+			chai.assert.equal("none", view.$el.find(".title").css("display"));
+		});
+
 		it("hides title and shows editable form field when editing a post", function () {
-			var model = new Leaf(),
+			var model = new Leaf({ editable: true }),
 				view = new LeafView({ model: model });
 
 			view.render().edit($.Event());
@@ -25,7 +38,7 @@ require([
 		});
 
 		it("hides editable form field and shows title when cancelling an edit", function () {
-			var model = new Leaf(),
+			var model = new Leaf({ editable: true }),
 				view = new LeafView({ model: model });
 
 			view.render().edit($.Event());
