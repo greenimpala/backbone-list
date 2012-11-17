@@ -13,8 +13,8 @@ A lightweight, themeable list component for Backbone.js apps.
 
 <table>
 <tr>
-<td><img height="70%" src="https://raw.github.com/st3redstripe/Backbone-List/master/src/clean.png"/></td>
-<td><img src="https://raw.github.com/st3redstripe/Backbone-List/master/src/explorer.png"/></td>
+<td><img height="70%" src="https://raw.github.com/st3redstripe/Backbone-List/master/example/clean.png"/></td>
+<td><img src="https://raw.github.com/st3redstripe/Backbone-List/master/example/explorer.png"/></td>
 </tr>
 <tr>
 <td><em><strong>Clean</strong> theme with Glyphicons</em></td>
