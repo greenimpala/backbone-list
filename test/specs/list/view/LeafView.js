@@ -67,5 +67,28 @@ require([
 			chai.assert.lengthOf(view.$el.find(".highlight"), 0);
 			chai.assert.equal("test-text", view.$el.find(".title").text());
 		});
+
+		it("triggers a users onClick when title clicked", function (done) {
+			var model = new Leaf({
+				title: "test",
+				onClick: function () {
+					done();
+				}
+			});
+			var view = new LeafView({ model: model });
+
+			view.render().$el.find(".title").click();
+		});
+
+		it("triggers a clicked event on the model when title clicked", function (done) {
+			var model = new Leaf({ title: "test" });
+			var view = new LeafView({ model: model });
+
+			model.on("clicked", function () {
+				done();
+			});
+
+			view.render().$el.find(".title").click();
+		});
 	});
 });

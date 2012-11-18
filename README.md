@@ -61,6 +61,21 @@ The following attributes can be `set` on models.
 * `editable`: A boolean denoting whether the node can be edited. Default is `false`.
 * `icon`: A string representing a Glyphicon icon class.
 
+## Events
+
+All model events are piped through a dispatcher - this makes it easy to listen to model changes in one place. Require `list/Dispatcher`.
+
+```js
+Dispatcher.on("change:visible", function (model) {
+    console.log("A node has been: " + (model.get("visible") ? "expanded" : "collapsed"));
+});
+```
+
+Aside from the standard set of Backbone events, you may also listen to the following.
+
+* `clicked`: Denotes that the node was clicked. Passed the corresponding model.
+* `search`: Denotes that a search was performed. Passed an array of matched models.
+
 ## Serializing For Storage
 
 You can call `toJSON()` on any model to generate a JSON representation. In turn with the `List` model's `deserialize()` method you can save the lists state and reconstruct a fresh instance.

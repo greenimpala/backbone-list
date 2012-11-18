@@ -31,9 +31,10 @@
     </div>
 	<script type="text/javascript">
 		require([
+            "list/Dispatcher",
 			"list/model/List",
             "list/view/ListView"
-		], function (List, ListView) {
+		], function (Dispatcher, List, ListView) {
             var model = new List();
             var view = new ListView({
                 model: model,
@@ -48,13 +49,20 @@
                 });
             });
 
-            // Quick and dirty theme changer
+            /* Example Dispatcher usage */
+            Dispatcher.on("change:visible", function (model) {
+                console.log("A node has been: " + (model.get("visible") ? "expanded" : "collapsed"));
+            });
+		});
+
+        $(function () {
+            /* Quick and dirty theme changer */
             $(function () {
                 $("select").change(function () {
                     $("link").attr("href", "../src/style/" + this.value + "/list.css");
                 }).change();
             });
-		});
+        });
 	</script>
 </body>
 </html>

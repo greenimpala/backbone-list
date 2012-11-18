@@ -65,6 +65,8 @@ define([
 			if (onClick && _.isFunction(onClick)) {
 				onClick(this.model);
 			}
+
+			this.model.trigger("clicked");
 		},
 
 		highlightTitle: function (from, to) {
