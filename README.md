@@ -4,10 +4,9 @@ Backbone-List
 A lightweight, themeable list component for Backbone.js apps.
 
 * Easily extendable
-* Themeable
+* Themeable using LESS
 * Searchable
 * Built in Glyphicons
-* LESS styles
 * Modular (Require.js)
 * Unit tested
 
@@ -64,7 +63,7 @@ The following attributes can be `set` on models.
 
 ## Serializing For Storage
 
-You can call `toJSON()` on any model to generate a JSON representation. In turn with the `List` model's `deserialize()` method you can save the lists state and reconstruct an instance in the future.
+You can call `toJSON()` on any model to generate a JSON representation. In turn with the `List` model's `deserialize()` method you can save the lists state and reconstruct a fresh instance.
 
 ```js
 var model = new List();
