@@ -19,6 +19,10 @@ define([
 		edit: function (e) {
 			e.stopImmediatePropagation();
 
+			if (this.model.get("editable") !== true) {
+				return;
+			}
+
 			this.$el.find(".title:first").hide();
 			this.$el.addClass("editing");
 
@@ -61,6 +65,8 @@ define([
 			if (onClick && _.isFunction(onClick)) {
 				onClick(this.model);
 			}
+
+			this.model.trigger("clicked");
 		},
 
 		highlightTitle: function (from, to) {

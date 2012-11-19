@@ -86,9 +86,10 @@ define([
 
 		_createChildView: function (model) {
 			var view;
-			var properties = _.extend({ model: model }, {
+			var properties = {
+				model: model,
 				animate: this.options.animate
-			});
+			};
 
 			if (model instanceof Leaf) {
 				view = new LeafView(properties);
