@@ -88,11 +88,6 @@ Aside from the standard set of Backbone events, you may also listen to the follo
 You can call `toJSON()` on any model to generate a JSON representation. In turn with the `List` model's `deserialize()` method you can save the lists state and reconstruct a fresh instance.
 
 ```js
-var model = new List();
-var view = new ListView({
-	model: model
-});
-
 // Fetch some data over XHR and populate the list
 $.getJSON("example-data.json", function (data) {
 	model.deserialize(data);
