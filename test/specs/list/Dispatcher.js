@@ -1,12 +1,10 @@
 require([
-	"underscore",
-	"jquery",
 	"list/Dispatcher",
 	"list/view/LeafView",
 	"list/view/CompositeView",
 	"list/model/List",
 	"list/model/Leaf"
-], function (_, $, Dispatcher, LeafView, CompositeView, List, Leaf) {
+], function (Dispatcher, LeafView, CompositeView, List, Leaf) {
 	describe("list/Dispatcher", function () {
 		it("receives child events from nested models", function (done) {
 			var model = new List();

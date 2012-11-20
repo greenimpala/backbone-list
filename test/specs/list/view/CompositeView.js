@@ -1,13 +1,11 @@
 define([
-	"underscore",
-	"handlebars",
 	"list/view/ListView",
 	"list/view/CompositeView",
 	"list/view/LeafView",
 	"list/model/List",
 	"list/model/Leaf",
 	"list/model/Composite"
-], function (_, Handlebars, ListView, CompositeView, LeafView, List, Leaf, Composite) {
+], function (ListView, CompositeView, LeafView, List, Leaf, Composite) {
 
 	(function () {
 		ListView.prototype.registerPartials();

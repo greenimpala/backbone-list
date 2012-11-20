@@ -1,11 +1,7 @@
 define([
-	"backbone",
-	"underscore",
-	"jquery",
-	"handlebars",
 	"list/view/NodeView",
 	"text!list/templates/LeafView.html"
-], function (Backbone, _, $, Handlebars, NodeView, template) {
+], function (NodeView, template) {
 	var LeafView = NodeView.extend({
 		className: "node leaf",
 

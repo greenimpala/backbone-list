@@ -1,15 +1,14 @@
 define([
-	"jquery",
 	"list/view/ListView",
 	"list/view/CompositeView",
 	"list/model/Leaf",
 	"list/model/List"
-], function ($, ListView, CompositeView, Leaf, List) {
+], function (ListView, CompositeView, Leaf, List) {
 	describe("list/view/ListView", function () {
-		
+
 		it("should instantiate with a model", function () {
 			var model = new List();
-			
+
 			chai.assert.isDefined(new ListView({ model: model }));
 		});
 

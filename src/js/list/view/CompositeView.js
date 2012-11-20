@@ -1,14 +1,10 @@
 define([
-	"backbone",
-	"underscore",
-	"jquery",
-	"handlebars",
 	"list/view/NodeView",
 	"list/model/Leaf",
 	"list/model/Composite",
 	"list/view/LeafView",
 	"text!list/templates/CompositeView.html"
-], function (Backbone, _, $, Handlebars, NodeView, Leaf, Composite, LeafView, template) {
+], function (NodeView, Leaf, Composite, LeafView, template) {
 	var CompositeView = NodeView.extend({
 		className: "node composite",
 

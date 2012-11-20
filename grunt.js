@@ -11,18 +11,17 @@ module.exports = function(grunt) {
 			}
 		},
 		requirejs: {
+			almond: true,
 			name: "list/view/ListView",
-			out: "backbone-list-min.js",
+			out: "backbone-list.min.js",
 			baseUrl: 'src/js',
 			paths: {
-				jquery: 'vendor/jquery/jquery',
-				underscore: 'vendor/underscore/lodash',
-				backbone: 'vendor/backbone/backbone',
-				handlebars: "vendor/handlebars/handlebars",
-				text: "vendor/require/text"
+				text: "vendor/require/text",
+				require: "vendor/require/require"
 			},
-			exclude: ["jquery", "backbone", "underscore", "handlebars"]
-		}
+			exclude: ["require"]
+		},
+		optimize: false
 	});
 
 	grunt.loadNpmTasks('grunt-requirejs');

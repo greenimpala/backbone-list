@@ -1,9 +1,6 @@
 define([
-	"backbone",
-	"underscore",
-	"jquery",
 	"list/model/Node"
-], function (Backbone, _, $, Node) {
+], function (Node) {
 	var Composite = Node.extend({
 		defaults: {
 			icon: "",
