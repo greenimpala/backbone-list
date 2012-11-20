@@ -27,9 +27,7 @@ Aside from Backbone and it's associated dependecies - Backbone-List requires the
 
 Backbone-List is built with Almond, a mini script loader. Include the minified script file in your page to `require` needed components.
 
-Create a new `List` model and a `ListView` view.
-
-When instantiating the view, pass the model as a parameter to bind it to the view. You can then begin adding nodes to the list.
+To begin, create a new `List` model and a `ListView` view. When instantiating the view, pass the model as a parameter to bind it to the view. You can then begin adding nodes to the list.
 
 ```js
 require([
