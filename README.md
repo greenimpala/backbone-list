@@ -23,9 +23,9 @@ A lightweight, themeable list component for Backbone.js apps.
 
 ## Usage
 
-Aside from Backbone and it's associated dependecies - Backbone-List requires the Handlebars templating library.
+Aside from Backbone and it's associated dependecies - Backbone-List requires the [Handlebars](https://github.com/wycats/handlebars.js/) templating library.
 
-Backbone-List is built with Almond, a mini script loader. Include the minified script file in your page to `require` needed components.
+Backbone-List is built with [almond](https://github.com/jrburke/almond), a mini script loader. Include the minified script file in your page to `require` needed components.
 
 To begin, create a new `List` model and a `ListView` view. When instantiating the view, pass the model as a parameter to bind it to the view. You can then begin adding nodes to the list.
 
