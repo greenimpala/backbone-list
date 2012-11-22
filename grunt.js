@@ -21,10 +21,14 @@ module.exports = function(grunt) {
 			},
 			exclude: ["require"]
 		},
-		optimize: true
+		optimize: true,
+		mocha: {
+			all: [ 'test/index.html' ]
+		}
 	});
 
+	grunt.loadNpmTasks('grunt-mocha');
 	grunt.loadNpmTasks('grunt-requirejs');
-	grunt.registerTask('default', 'requirejs');
+	grunt.registerTask('default', ['grunt-mocha', 'requirejs']);
 
 };
