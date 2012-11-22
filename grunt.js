@@ -21,7 +21,7 @@ module.exports = function(grunt) {
 			},
 			exclude: ["require"]
 		},
-		optimize: false
+		optimize: true
 	});
 
 	grunt.loadNpmTasks('grunt-requirejs');
