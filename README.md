@@ -132,4 +132,5 @@ Themes are written in LESS and can be compiled to CSS. The `src/style` directory
 ## Tests
 
 This project uses the Mocha test framework. To run the tests, open the spec runner `test/index.html` in a browser.
+
 Alternatively, if you have grunt and the npm dependencies, run them headless using `grunt mocha`.
