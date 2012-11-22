@@ -1,13 +1,12 @@
 Backbone-List
 ====================
 
-A lightweight, themeable list component for Backbone.js apps.
+A powerful, extendible list component for Backbone.js applications.
 
-* Easily extendable
-* Themeable using LESS
-* Searchable
-* Built in Glyphicons
-* Modular (Require.js)
+* Extendable
+* Lightweight _(4.8KB gzipped)_
+* LESS themes
+* Modular _(Require.js)_
 * Unit tested
 
 <table>
