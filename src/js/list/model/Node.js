@@ -1,7 +1,6 @@
 define([
-	"backbone",
 	"list/Dispatcher"
-], function (Backbone, Dispatcher) {
+], function (Dispatcher) {
 	var Node = Backbone.Model.extend({
 		defaults: {
 			"visible" : true

@@ -1,10 +1,7 @@
 define([
-	"backbone",
-	"underscore",
-	"jquery",
 	"list/model/Composite",
 	"list/model/Leaf"
-], function (Backbone, _, $, Composite, Leaf) {
+], function (Composite, Leaf) {
 	var List = Composite.extend({
 		_lastSearch: null,
 

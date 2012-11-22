@@ -23,13 +23,20 @@ A lightweight, themeable list component for Backbone.js apps.
 
 ## Usage
 
-Create a new `List` model and a `ListView` view.
+Aside from Backbone and it's associated dependecies - Backbone-List requires the [Handlebars](https://github.com/wycats/handlebars.js/) templating library.
 
-When instantiating the view, pass the model as a parameter to bind it to the view. You can then begin adding nodes to the list.
+Backbone-List is built with [almond](https://github.com/jrburke/almond), a mini script loader. Include the minified script file in your page to `require` needed components.
+
+To begin, create a new `List` model and a `ListView` view. When instantiating the view, pass the model as a parameter to bind it to the view. You can then begin adding nodes to the list.
 
 ```js
-var model = new List();
-var view = new ListView({ model: model });
+require([
+	"list/model/List",
+	"list/view/ListView"
+], function (List, ListView) {
+	var model = new List();
+	var view = new ListView({ model: model });
+});
 ```
 
 ### Adding nodes
@@ -81,11 +88,6 @@ Aside from the standard set of Backbone events, you may also listen to the follo
 You can call `toJSON()` on any model to generate a JSON representation. In turn with the `List` model's `deserialize()` method you can save the lists state and reconstruct a fresh instance.
 
 ```js
-var model = new List();
-var view = new ListView({
-	model: model
-});
-
 // Fetch some data over XHR and populate the list
 $.getJSON("example-data.json", function (data) {
 	model.deserialize(data);

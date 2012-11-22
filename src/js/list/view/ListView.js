@@ -1,13 +1,9 @@
 define([
-	"backbone",
-	"underscore",
-	"jquery",
-	"handlebars",
 	"list/view/CompositeView",
 	"text!list/templates/_NodeView.html",
 	"text!list/templates/Search.html",
 	"list/model/List"
-], function (Backbone, _, $, Handlebars, CompositeView, _NodeView, Search, List) {
+], function (CompositeView, _NodeView, Search, List) {
 	var ListView = CompositeView.extend({
 		tagName: "div",
 

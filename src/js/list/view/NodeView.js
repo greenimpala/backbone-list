@@ -1,8 +1,5 @@
 define([
-	"backbone",
-	"underscore",
-	"jquery"
-], function (Backbone, _, $) {
+], function () {
 	var NodeView = Backbone.View.extend({
 		initialize: function () {
 			this.model.on("highlight", this.highlightTitle, this);

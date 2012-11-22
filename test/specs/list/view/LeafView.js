@@ -1,11 +1,9 @@
 require([
-	"underscore",
-	"jquery",
 	"list/view/LeafView",
 	"list/view/CompositeView",
 	"list/model/List",
 	"list/model/Leaf"
-], function (_, $, LeafView, CompositeView, List, Leaf) {
+], function (LeafView, CompositeView, List, Leaf) {
 	describe("list/view/LeafView", function () {
 
 		it("instantiates with a model", function () {
