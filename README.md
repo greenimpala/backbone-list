@@ -112,7 +112,7 @@ The generated JSON is an array of top level nodes. Composite items may have a `c
 
 ## Options
 
-You may pass the following properties when instantiating the main list view.
+You may pass the following properties when instantiating the main `ListView`.
 
 * `search`: Boolean denoting whether to display a search field. Default is `false`.
 * `animate`: Boolean denoting whether use animations when expanding and collapsing. Default is `false`.
