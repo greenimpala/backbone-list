@@ -53,11 +53,6 @@
                 });
             });
 
-            /* Example Dispatcher usage */
-            Dispatcher.on("change:visible", function (model) {
-                console.log("A node has been: " + (model.get("visible") ? "expanded" : "collapsed"));
-            });
-
             $(function () {
                 $("select").change(function () {
                     $("link").attr("href", "../src/style/" + this.value + "/list.css");

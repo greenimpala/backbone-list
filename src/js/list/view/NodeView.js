@@ -63,7 +63,7 @@ define([
 				onClick(this.model);
 			}
 
-			this.model.trigger("clicked");
+			this.model.trigger("clicked", this.model);
 		},
 
 		highlightTitle: function (from, to) {

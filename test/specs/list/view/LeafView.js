@@ -78,11 +78,12 @@ require([
 			view.render().$el.find(".title").click();
 		});
 
-		it("triggers a clicked event on the model when title clicked", function (done) {
+		it("triggers a clicked event on the model when title clicked, passed the correct model", function (done) {
 			var model = new Leaf({ title: "test" });
 			var view = new LeafView({ model: model });
 
-			model.on("clicked", function () {
+			model.on("clicked", function (clickedModel) {
+				chai.assert.equal(model, clickedModel);
 				done();
 			});
 
