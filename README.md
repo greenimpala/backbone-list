@@ -6,6 +6,7 @@ A powerful, extendible list component for Backbone.js applications.
 * Extendable
 * Lightweight _(4.8KB gzipped)_
 * LESS themes
+* Data persitence
 * Modular _(Require.js)_
 * Unit tested
 
