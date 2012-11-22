@@ -53,6 +53,11 @@
                 });
             });
 
+            /* Example Dispatcher usage */
+            Dispatcher.on("clicked", function (model) {
+                console.log("'" + model.get("title") + "' was clicked")
+            });
+
             $(function () {
                 $("select").change(function () {
                     $("link").attr("href", "../src/style/" + this.value + "/list.css");
