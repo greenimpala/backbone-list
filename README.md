@@ -25,9 +25,9 @@ A powerful, extendible list component for Backbone.js applications.
 
 Aside from Backbone and it's associated dependecies - Backbone-List requires the [Handlebars](https://github.com/wycats/handlebars.js/) templating library.
 
-Backbone-List is built with [almond](https://github.com/jrburke/almond), a mini script loader. Include the minified script file in your page to `require` needed components.
+Backbone-List is built with [almond](https://github.com/jrburke/almond), a mini script loader. Include the minified script file `backbone-list.min.js` in your page and `require` needed components.
 
-To begin, create a new `List` model and a `ListView` view. When instantiating the view, pass the model as a parameter to bind it to the view. You can then begin adding nodes to the list.
+As a minium you will need a `List` model and a `ListView` view. When instantiating the view, pass the model as a parameter to bind it to the view. You can then begin adding nodes to the list.
 
 ```js
 require([
@@ -41,7 +41,7 @@ require([
 
 ### Adding nodes
 
-You can add `Composite` models or `Leaf` models to your main model. If you add a `Composite` model, you can add leaves and other composites to it - building up a composite hierarchy.
+You can add `Composite` models or `Leaf` models to your main model. If you add a `Composite` model, you may add leaves and composites to it - building up a composite hierarchy.
 
 ```js
 var composite = new Composite({ title: "Pictures" });
@@ -70,7 +70,7 @@ The following attributes can be `set` on models.
 
 ## Events
 
-All model events are piped through a dispatcher - this makes it easy to listen to model changes in one place. Require `list/Dispatcher`.
+All model events are piped through a dispatcher meaning it is easy to listen to model changes in one place. Require `list/Dispatcher`.
 
 ```js
 Dispatcher.on("change:visible", function (model) {
@@ -85,7 +85,7 @@ Aside from the standard set of Backbone events, you may also listen to the follo
 
 ## Serializing For Storage
 
-You can call `toJSON()` on any model to generate a JSON representation. In turn with the `List` model's `deserialize()` method you can save the lists state and reconstruct a fresh instance.
+Call `toJSON()` on any model to generate a JSON representation. Use the `deserialize()` method on the `List` model to rehydrate a new list.
 
 ```js
 // Fetch some data over XHR and populate the list
@@ -133,4 +133,4 @@ Themes are written in LESS and can be compiled to CSS. The `src/style` directory
 
 This project uses the Mocha test framework. To run the tests, open the spec runner `test/index.html` in a browser.
 
-Alternatively, if you have grunt and the npm dependencies, run them headless using `grunt mocha`.
+Alternatively, if you have grunt and the npm dependencies, run them headless using `$ grunt mocha`.
