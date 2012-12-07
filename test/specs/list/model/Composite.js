@@ -87,5 +87,18 @@ define([
 			chai.assert.isArray(children);
 			chai.assert.equal(children.length, 5);
 		});
+
+		it("destroys the model when removing a child", function (done) {
+			var model = new Composite();
+			var leaf = new Leaf();
+
+			model.add(leaf);
+
+			leaf.on("destroy", function () {
+				done();
+			});
+
+			model.remove(leaf);
+		});
 	});
 });

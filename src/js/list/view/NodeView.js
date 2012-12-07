@@ -3,7 +3,8 @@ define([
 	var NodeView = Backbone.View.extend({
 		initialize: function () {
 			this.model.on("highlight", this.highlightTitle, this);
-			this.model.on("resetTitle", this.clearTitleHighlights, this)
+			this.model.on("resetTitle", this.clearTitleHighlights, this);
+			this.model.on("destroy", this.destroyView, this);
 		},
 
 		events: {
@@ -11,6 +12,11 @@ define([
 			"blur .title-edit"      : "cancelEdit",
 			"keypress .title-edit"  : "saveEditOnEnter",
 			"click .title"          : "fireUserOnClick"
+		},
+
+		destroyView: function () {
+			this.remove();
+			this.undelegateEvents();
 		},
 
 		edit: function (e) {

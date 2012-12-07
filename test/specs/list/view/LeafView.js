@@ -89,5 +89,16 @@ require([
 
 			view.render().$el.find(".title").click();
 		});
+
+		it("removes itself from the DOM when its associated model is destroyed", function () {
+			var model = new Leaf({ title: "test" });
+			var view = new LeafView({ model: model });
+			var spy = sinon.spy(view, "remove");
+
+			view.render();
+			model.destroy();
+
+			chai.assert.isTrue(spy.calledOnce);
+		});
 	});
 });

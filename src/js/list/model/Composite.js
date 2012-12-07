@@ -16,8 +16,9 @@ define([
 			this.get("children").add(child);
 		},
 
-		remove: function (child) {
+		remove: function (child, preserveModel) {
 			this.get("children").remove(child);
+			preserveModel || child.destroy();
 		},
 
 		getChildren: function (recursiveSearch) {
