@@ -29,6 +29,6 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-mocha');
 	grunt.loadNpmTasks('grunt-requirejs');
-	grunt.registerTask('default', ['grunt-mocha', 'requirejs']);
+	grunt.registerTask('default', ['mocha', 'requirejs']);
 
 };
