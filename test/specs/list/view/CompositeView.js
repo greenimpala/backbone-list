@@ -49,7 +49,7 @@ define([
 		});
 
 		it("destroys a view for a child model when removed", function () {
-			var model = new Composite,
+			var model = new Composite(),
 				view = new CompositeView({ model: model }),
 				childModel = new Leaf();
 

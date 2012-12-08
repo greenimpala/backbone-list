@@ -18,7 +18,7 @@ require([
 				done();
 			});
 
-			leaf.set("title", "newTestTitle")
+			leaf.set("title", "newTestTitle");
 		});
 	});
 });

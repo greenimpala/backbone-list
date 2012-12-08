@@ -16,7 +16,7 @@ define([
 				parameters: {
 					title: this.get("title")
 				}
-			}
+			};
 		}
 	}, {
 		JSON_EXPORT: "Leaf"

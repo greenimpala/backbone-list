@@ -18,7 +18,9 @@ define([
 
 		remove: function (child, preserveModel) {
 			this.get("children").remove(child);
-			preserveModel || child.destroy();
+			if (!preserveModel) {
+				child.destroy();
+			}
 		},
 
 		getChildren: function (recursiveSearch) {
@@ -52,7 +54,7 @@ define([
 					title: this.get("title")
 				},
 				children: children
-			}
+			};
 		}
 	}, {
 		JSON_EXPORT: "Composite"
