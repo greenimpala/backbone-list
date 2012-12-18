@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/st3redstripe/Backbone-List.png?branch=master)](https://travis-ci.org/st3redstripe/Backbone-List)
+
 Backbone-List
 ====================
 
