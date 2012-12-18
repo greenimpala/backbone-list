@@ -40,7 +40,7 @@ define([
 			model.add(child);
 			model.remove(child);
 
-			chai.assert.lengthOf(model.get("children"), 0);
+			chai.assert.lengthOf(model.get("children"), 1);
 		});
 
 		it("sets a default icon property", function () {
