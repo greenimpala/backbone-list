@@ -8,10 +8,12 @@
     "test": "test"
   },
   "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "~1.1.66",
     "grunt-mocha": "~0.1.7",
     "grunt-requirejs": "~0.2.14"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "grunt mocha"
   },
