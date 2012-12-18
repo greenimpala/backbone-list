@@ -10,7 +10,7 @@
   "dependencies": {
   },
   "devDependencies": {
-    "grunt": "~1.1.66",
+    "grunt": "~0.3.17",
     "grunt-mocha": "~0.1.7",
     "grunt-requirejs": "~0.2.14"
   },
