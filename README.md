@@ -70,7 +70,7 @@ The following attributes can be `set` on models.
 
 ## Events
 
-All model events are piped through a dispatcher meaning it is easy to listen to model changes in one place. Require `list/Dispatcher`.
+All model events are piped through a dispatcher which makes it easy to listen to model changes in one place. Require `list/Dispatcher`.
 
 ```js
 Dispatcher.on("change:visible", function (model) {
