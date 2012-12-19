@@ -3,10 +3,6 @@
   "version": "0.1.0",
   "description": "A powerful, extendible list component for Backbone.js applications.",
   "main": "backbone-list.min.js",
-  "directories": {
-    "example": "example",
-    "test": "test"
-  },
   "dependencies": {
   },
   "devDependencies": {
@@ -21,6 +17,6 @@
     "type": "git",
     "url": "git://github.com/st3redstripe/Backbone-List.git"
   },
-  "author": "@st3redstripe",
+  "author": "st3redstripe",
   "license": "BSD"
 }
