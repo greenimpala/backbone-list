@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/st3redstripe/Backbone-List.png?branch=master)](https://travis-ci.org/st3redstripe/Backbone-List)
 
-Backbone-List
+backbone-list
 ====================
 
 A powerful, extendible list component for Backbone.js applications.
