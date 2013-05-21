@@ -11,7 +11,7 @@
     "grunt-requirejs": "~0.2.14"
   },
   "scripts": {
-    "test": "grunt mocha"
+    "test": "node -e \"require('grunt').cli();\""
   },
   "repository": {
     "type": "git",

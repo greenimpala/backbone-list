@@ -11,11 +11,12 @@ A powerful, extendible list component for Backbone.js applications.
 * Data persitence
 * Modular _(Require.js)_
 * Unit tested
+* Built with Backbone 1.0
 
 <table>
 <tr>
-<td><img height="70%" src="https://raw.github.com/st3redstripe/Backbone-List/master/example/clean.png"/></td>
-<td><img src="https://raw.github.com/st3redstripe/Backbone-List/master/example/explorer.png"/></td>
+<td><img height="70%" src="https://raw.github.com/st3redstripe/backbone-list/master/example/clean.png"/></td>
+<td><img src="https://raw.github.com/st3redstripe/backbone-list/master/example/explorer.png"/></td>
 </tr>
 <tr>
 <td><em><strong>Clean</strong> theme with Glyphicons</em></td>
@@ -131,8 +132,10 @@ var view = new ListView({
 
 Themes are written in LESS and can be compiled to CSS. The `src/style` directory lists the default themes. Create a new theme by duplicating one of these directories and modify the LESS files accordingly.
 
-## Tests
+## Building
 
-This project uses the Mocha test framework. To run the tests, open the spec runner `test/index.html` in a browser.
+The following command runs the tests and builds the minified source.
 
-Alternatively, if you have grunt and the npm dependencies, run them headless using `$ grunt mocha`.
+```bash
+$ npm install -d && node -e "require('grunt').cli();"
+```

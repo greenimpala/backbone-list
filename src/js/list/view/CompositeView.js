@@ -33,8 +33,8 @@ define([
 			this.model.get("children").on("remove", this.removeChildViewForModel, this);
 			this.model.on("change:visible", this.onVisibilityChange, this);
 
-			this._$header = $(this.make("div")).appendTo(this.el);
-			this._$children = $(this.make("ul")).appendTo(this.el);
+			this._$header = $(document.createElement("div")).appendTo(this.el);
+			this._$children = $(document.createElement("ul")).appendTo(this.el);
 		},
 
 		render: function () {
