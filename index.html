@@ -1,12 +1,12 @@
 <html>
 <head>
-	<title>Backbone-List</title>
-	<link rel="stylesheet" type="text/css">
+    <title>backbone-list</title>
+    <link rel="stylesheet" type="text/css">
     <script src="https://raw.github.com/st3redstripe/backbone-list/master/src/js/vendor/jquery/jquery.js"></script>
     <script src="https://raw.github.com/st3redstripe/backbone-list/master/src/js/vendor/underscore/lodash.js"></script>
     <script src="https://raw.github.com/st3redstripe/backbone-list/master/src/js/vendor/backbone/backbone.js"></script>
     <script src="https://raw.github.com/st3redstripe/backbone-list/master/src/js/vendor/handlebars/handlebars.js"></script>
-	<script src="https://raw.github.com/st3redstripe/backbone-list/master/backbone-list.min.js"></script>
+    <script src="https://raw.github.com/st3redstripe/backbone-list/master/backbone-list.min.js"></script>
     <style>
         p, h1 {
             font-family: Helvetica, Arial, sans-serif;
@@ -23,7 +23,7 @@
     </style>
 </head>
 <body>
-<h1>Backbone-List</h1>
+<h1>backbone-list</h1>
     <p>
         Theme:
         <select>
@@ -33,12 +33,12 @@
     </p>
     <div id="container">
     </div>
-	<script type="text/javascript">
-		require([
+    <script type="text/javascript">
+        require([
             "list/Dispatcher",
-			"list/model/List",
+            "list/model/List",
             "list/view/ListView"
-		], function (Dispatcher, List, ListView) {
+        ], function (Dispatcher, List, ListView) {
             var model = new List();
             var view = new ListView({
                 model: model,
@@ -60,10 +60,10 @@
 
             $(function () {
                 $("select").change(function () {
-                    $("link").attr("href", "../src/style/" + this.value + "/list.css");
+                    $("link").attr("href", "https://raw.github.com/st3redstripe/backbone-list/master/src/style/" + this.value + "/list.css");
                 }).change();
             });
-		});
-	</script>
+        });
+    </script>
 </body>
 </html>
