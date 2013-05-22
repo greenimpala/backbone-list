@@ -3,9 +3,7 @@
 backbone-list
 ====================
 
-<a href="http://st3redstripe.github.io/backbone-list/">Demo</a>
-
-A powerful, extendible list component for Backbone.js applications.
+A powerful, extendible list component for Backbone.js applications. ([View demo](http://st3redstripe.github.io/backbone-list))
 
 * Extendable
 * Lightweight _(4.8KB gzipped)_
@@ -13,7 +11,7 @@ A powerful, extendible list component for Backbone.js applications.
 * Data persitence
 * Modular _(Require.js)_
 * Unit tested
-* Built with Backbone 1.0
+* Built for Backbone 1.0
 
 ## Usage
 
