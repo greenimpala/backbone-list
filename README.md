@@ -3,6 +3,8 @@
 backbone-list
 ====================
 
+<a href="http://st3redstripe.github.io/backbone-list/">Demo</a>
+
 A powerful, extendible list component for Backbone.js applications.
 
 * Extendable
@@ -12,17 +14,6 @@ A powerful, extendible list component for Backbone.js applications.
 * Modular _(Require.js)_
 * Unit tested
 * Built with Backbone 1.0
-
-<table>
-<tr>
-<td><img height="70%" src="https://raw.github.com/st3redstripe/backbone-list/master/example/clean.png"/></td>
-<td><img src="https://raw.github.com/st3redstripe/backbone-list/master/example/explorer.png"/></td>
-</tr>
-<tr>
-<td><em><strong>Clean</strong> theme with Glyphicons</em></td>
-<td><em><strong>Explorer</strong> theme with search enabled</em></td>
-</tr>
-</table>
 
 ## Usage
 
