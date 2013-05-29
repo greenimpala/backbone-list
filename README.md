@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/st3redstripe/Backbone-List.png?branch=master)](https://travis-ci.org/st3redstripe/Backbone-List)
+[![Build Status](https://travis-ci.org/st3redstripe/backbone-list.png?branch=master)](https://travis-ci.org/st3redstripe/backbone-list)
 
 backbone-list
 ====================
